@@ -1,0 +1,25 @@
+{
+	"mim_type": "announcement",
+	"rule_name": "",
+	"gui": null,
+	"timeout": 6,
+	"no_matches_for_gui": 0,
+	"no_inputs_for_gui": 0,
+	"barge_in": true,
+	"es_auto_tagging": true,
+	"parse_all_asr": false,
+	"thanks_handling": "ignore",
+	"notes": "",
+	"prompts": [
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "Put the tail term fusible or the element that replaces it nailing it to the motor shaft. Put it in a way so when it turns doesn’t touch the container. If you want your robot to vibrate more, don´t put it exactly in the middle of the shaft.",
+			"media": "TTS",
+			"prompt_id": "ID_STEP_4",
+			"weight": 1
+		}
+	]
+}
