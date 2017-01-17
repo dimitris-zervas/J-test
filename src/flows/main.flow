@@ -59,7 +59,7 @@
             "class": "Mim.Question",
             "clazz": "Mim.Question",
             "asset-pack": "core",
-            "loc": "-347.90644827037 -280.7163708531541",
+            "loc": "-377.6739482703699 -280.7163708531541",
             "id": "35c46a37-f6ee-49e6-bf50-21284f463d49",
             "options": {
                 "mimPath": "mims\\en-us\\oobe\\cloqq_init.mim",
@@ -105,24 +105,28 @@
             "class": "Mim.Announcement",
             "clazz": "Mim.Announcement",
             "asset-pack": "core",
-            "loc": "-52.8366016613094 -408.56007566230613",
+            "loc": "-31.88910166130941 -426.2000756623061",
             "id": "3c613b0e-b7ca-40ad-b9d0-8d09548752f1",
             "options": {
                 "mimPath": "mims/en-us/oobe/AW_step.mim",
                 "getPromptData": [
                     "() => {",
-                    "\tlet cmd = notepad.Command;",
-                    "\tlet action = \"\";",
+                    "\tvar cmd = notepad.Command;",
+                    "\tvar action = \"\";",
                     "\t",
                     "\tif (cmd == \"nextStep\") {",
+                    "\t\tnotepad.stepNo += 1;",
                     "\t\taction = \"go_to_next_step\";",
                     "\t}else if (cmd == \"prevStep\") {",
+                    "\t\tnotepad.stepNo -= 1;",
                     "\t\taction = \"go_to_prev_step\";",
                     "\t}else if (cmd == \"repeat\") {",
                     "\t\taction = \"repeat\";",
+                    "\t}else if (cmd == \"expand\") {",
+                    "\t\taction = \"expand_image\";",
                     "\t}",
                     "\tconsole.log(\"Current Step No: \" + notepad.stepNo);",
-                    "\t",
+                    "\tconsole.log(\"Command received: \" + notepad.Command);",
                     "\tvar request = require('request');",
                     "\tvar TOKEN = \"lzSML0kfMeEysMPzdmnclVdqI7TETCA1UulEJ9tRJswdKtaOGpVxWh8M74dz3tWDTmft96To7M9T2qcCTOTkQyHDZ2c40DZDdqwqVssu2reqxhmIOZC6STJQhkvzKnEy7gaf1vlxNBbWJ3Zs2F8hnL\";",
                     "",
@@ -136,21 +140,21 @@
                     "\t\t    \"actions\" : [{\"name\": action},],",
                     "\t\t  }",
                     "\t};",
-                    "\t",
-                    "\tif (action != \"repeat\") {",
-                    "\t\trequest(options, function (error, response, body) {",
-                    "\t\t  if (!error && response.statusCode == 200) {",
-                    "\t\t    console.log(body.id) // Print the shortened url.",
-                    "\t\t  }",
-                    "\t\t});",
-                    "\t}",
+                    "\tconsole.log(\"eeep\");",
+                    "\t// if ((cmd == \"nextStep\") || (cmd==\"prevStep\") || (cmd == \"repeat\")) {",
+                    "\trequest(options, function (error, response, body) {",
+                    "\t  if (!error && response.statusCode == 200) {",
+                    "\t    console.log(body.id) // Print the shortened url.",
+                    "\t  }",
+                    "\t});\t",
+                    "\tconsole.log(\"ooop\");",
                     "\treturn {};",
                     "}",
                     "",
                     ""
                 ]
             },
-            "name": "AW_step",
+            "name": "AW",
             "size": "106 46"
         },
         {
@@ -163,18 +167,24 @@
                 "Script": [
                     "() => {",
                     "  var step = notepad.stepNo;",
+                    "  var cmd = notepad.Command;",
                     "  console.log(\"check_step: \" + step);",
-                    "  let transition = \"\";",
-                    "  if (step == 1) {",
-                    "    transition = \"s1\";",
-                    "  }else if (step == 2) {",
-                    "    transition = \"s2\";",
-                    "  }else if (step == 3) {",
-                    "    transition = \"s3\";",
-                    "  }else if (step == 4) {",
-                    "    transition = \"s4\";",
-                    "  }else if (step == 5) {",
-                    "    transition = \"s5\";",
+                    "  var transition = \"\";",
+                    "  ",
+                    "  if ((cmd==\"nextStep\") || (cmd==\"prevStep\") || (cmd==\"repeat\")) {",
+                    "    if (step == 1) {",
+                    "      transition = \"s1\";",
+                    "    }else if (step == 2) {",
+                    "      transition = \"s2\";",
+                    "    }else if (step == 3) {",
+                    "      transition = \"s3\";",
+                    "    }else if (step == 4) {",
+                    "      transition = \"s4\";",
+                    "    }else if (step == 5) {",
+                    "      transition = \"s5\";",
+                    "    }",
+                    "  }else {",
+                    "    transition = \"aux\";",
                     "  }",
                     "  ",
                     "  return transition;",
@@ -295,35 +305,6 @@
             "id": "7ae16c7c-e5aa-4457-803f-f58a6fce68e4",
             "name": "step5",
             "size": "75 38.82284749830794"
-        },
-        {
-            "class": "Flow.Eval",
-            "clazz": "Flow.Eval",
-            "asset-pack": "core",
-            "loc": "-52.8366016613094 -546.6892375",
-            "id": "af7ee3d1-05f3-463c-8ed7-2cf1a91b0452",
-            "options": {
-                "Script": [
-                    "() => {",
-                    "    let cmd = notepad.Command;",
-                    "    console.log(cmd);",
-                    "    var output;",
-                    "    if (cmd == \"nextStep\") {",
-                    "      notepad.stepNo += 1;",
-                    "      output = \"step\";",
-                    "    }else if (cmd == \"prevStep\") {",
-                    "      notepad.stepNo -= 1;",
-                    "      output = \"step\";",
-                    "    }else if (cmd == \"repeat\") {",
-                    "      output = \"step\";",
-                    "    }else if (cmd == \"expand\") {",
-                    "      output = \"expand\";",
-                    "    }",
-                    "    return output;",
-                    "}"
-                ]
-            },
-            "name": "check_command"
         }
     ],
     "linkDataArray": [
@@ -448,7 +429,7 @@
             "text": "",
             "toSpot": {
                 "class": "go.Spot",
-                "x": 0.8755198942737025,
+                "x": 0.838509561388896,
                 "y": 1,
                 "offsetX": 0,
                 "offsetY": 0
@@ -562,28 +543,6 @@
             }
         },
         {
-            "from": "35c46a37-f6ee-49e6-bf50-21284f463d49",
-            "to": "af7ee3d1-05f3-463c-8ed7-2cf1a91b0452",
-            "fromPort": "",
-            "toPort": "",
-            "text": "",
-            "toSpot": {
-                "class": "go.Spot",
-                "x": 0,
-                "y": 0.5502986478955767,
-                "offsetX": 0,
-                "offsetY": 0
-            }
-        },
-        {
-            "from": "af7ee3d1-05f3-463c-8ed7-2cf1a91b0452",
-            "to": "3c613b0e-b7ca-40ad-b9d0-8d09548752f1",
-            "fromPort": "",
-            "toPort": "",
-            "text": "step",
-            "segmentOffset": "41.89500000000004 16.537499999999966"
-        },
-        {
             "from": "3c613b0e-b7ca-40ad-b9d0-8d09548752f1",
             "to": "82b49250-6809-4664-b0df-18524a4781a0",
             "fromPort": "",
@@ -595,7 +554,44 @@
                 "y": 0,
                 "offsetX": 0,
                 "offsetY": 0
+            },
+            "segmentOffset": "19.84499999999997 0",
+            "fromSpot": {
+                "class": "go.Spot",
+                "x": 0.49927107994159825,
+                "y": 1,
+                "offsetX": 0,
+                "offsetY": 0
             }
+        },
+        {
+            "from": "35c46a37-f6ee-49e6-bf50-21284f463d49",
+            "to": "3c613b0e-b7ca-40ad-b9d0-8d09548752f1",
+            "fromPort": "",
+            "toPort": "",
+            "text": "",
+            "toSpot": {
+                "class": "go.Spot",
+                "x": 0.48838259232367315,
+                "y": 0,
+                "offsetX": 0,
+                "offsetY": 0
+            },
+            "fromSpot": {
+                "class": "go.Spot",
+                "x": 0.8913814655100477,
+                "y": 0,
+                "offsetX": 0,
+                "offsetY": 0
+            }
+        },
+        {
+            "from": "82b49250-6809-4664-b0df-18524a4781a0",
+            "to": "35c46a37-f6ee-49e6-bf50-21284f463d49",
+            "fromPort": "",
+            "toPort": "",
+            "text": "aux",
+            "segmentOffset": "29.767500000000027 12.127499999999998"
         }
     ]
 }
