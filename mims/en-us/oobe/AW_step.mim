@@ -16,9 +16,29 @@
 			"prompt_sub_category": "AN",
 			"index": 1,
 			"condition": "",
-			"prompt": "Next step. Done.",
+			"prompt": "Alright",
 			"media": "TTS",
 			"prompt_id": "ID_Resp_1",
+			"weight": 1
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "Of course",
+			"media": "TTS",
+			"prompt_id": "ID_Resp_2",
+			"weight": 1
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "Sure",
+			"media": "TTS",
+			"prompt_id": "ID_Resp_3",
 			"weight": 1
 		}
 	]
