@@ -1,0 +1,31 @@
+TopRule = ($* $COMMAND $*) {slotAction=COMMAND._slotaction};
+
+COMMAND =
+            $NEXT_STEP {_slotaction=NEXT_STEP._slotaction} |
+            $PREV_STEP {_slotaction=PREV_STEP._slotaction} |
+            $REPEAT {_slotaction=REPEAT._slotaction} |
+            $EXPAND_IMG {_slotaction=EXPAND_IMG._slotaction};
+
+NEXT_STEP = (
+                (go to the next step) |
+                (let\'s go to the next step) |
+                (what is next)
+            ) {_slotaction='nextStep'};
+
+PREV_STEP = (
+                (go to the previous step) |
+                (let\'s go to the previous step) |
+                (go back one step) |
+                (go back)
+            ) {_slotaction='prevStep'};
+
+REPEAT = (
+                (can you repeat) |
+                (what do I have to do here) |
+                (can you explain again) | (repeat)
+         ) {_slotaction='repeat'};
+
+EXPAND_IMG = (
+                (can you make the image bigger) |
+                (can you expand the image)
+             ) {_slotaction='expand'};

@@ -1,0 +1,303 @@
+{
+    "class": "go.GraphLinksModel",
+    "dataFormat": "flow-1",
+    "nodeKeyProperty": "id",
+    "nodeCategoryProperty": "class",
+    "linkFromPortIdProperty": "fromPort",
+    "linkToPortIdProperty": "toPort",
+    "nodeDataArray": [
+        {
+            "class": "Flow.Begin",
+            "name": "Begin",
+            "loc": "-308.171875 -546.6892375",
+            "id": "943fb90c-8699-4eb6-9de1-a1cddc841c94",
+            "options": {
+                "inputParameters": [
+                    "()=>{",
+                    "  return {",
+                    "//    parm1: 'parm1_default_value',",
+                    "//    parm2: 'parm2_default_value'",
+                    "  };",
+                    "}"
+                ]
+            },
+            "clazz": "Flow.Begin"
+        },
+        {
+            "class": "Flow.End",
+            "loc": "-303.1392161075524 54.5",
+            "id": "a42f06cc-3846-4a21-807f-c75205334c7a",
+            "options": {
+                "getTransition": [
+                    "() => { return ''; }"
+                ]
+            },
+            "clazz": "Flow.End",
+            "name": ""
+        },
+        {
+            "class": "Subtree",
+            "asset-pack": "core",
+            "loc": "-299.93329874915395 -74.5",
+            "id": "b9f977cb-76a3-411a-b348-b5a9a001623e",
+            "options": {
+                "getNotepad": [
+                    "() => {",
+                    "    return {};",
+                    "}"
+                ],
+                "onResult": [
+                    "(treeResult) => {",
+                    "}"
+                ],
+                "behaviorPath": "../behaviors/idle"
+            },
+            "name": "idle",
+            "clazz": "Subtree"
+        },
+        {
+            "class": "Mim.Question",
+            "clazz": "Mim.Question",
+            "asset-pack": "core",
+            "loc": "-315.93329874915395 -361.5",
+            "id": "35c46a37-f6ee-49e6-bf50-21284f463d49",
+            "options": {
+                "mimPath": "mims\\en-us\\oobe\\cloqq_init.mim",
+                "getPromptData": [
+                    "() => {",
+                    "\treturn {};",
+                    "}",
+                    "",
+                    ""
+                ],
+                "onStatus": [
+                    "(status) => {",
+                    "\tlet mimState = status.state;",
+                    "\tlet asrResults = status.asrResults;",
+                    "}"
+                ],
+                "onSuccess": [
+                    "(results) => {",
+                    "\tlet mimState = results.state;",
+                    "\tlet asrResults = results.asrResults;",
+                    "\tlet transition = results.firstGrammarTag;",
+                    "\treturn transition;",
+                    "}",
+                    "//Transitions: undefined",
+                    ""
+                ],
+                "onFailure": [
+                    "(results) => {",
+                    "\tlet mimState = results.state;",
+                    "\tlet asrResults = results.asrResults;",
+                    "\tlet exception = results.exception;",
+                    "\treturn exception;",
+                    "}"
+                ]
+            },
+            "name": "cloqq_init",
+            "size": "90.52284749830794 49"
+        },
+        {
+            "class": "Mim.Announcement",
+            "clazz": "Mim.Announcement",
+            "asset-pack": "core",
+            "loc": "-184.35944915961736 -556.322847498308",
+            "id": "3c613b0e-b7ca-40ad-b9d0-8d09548752f1",
+            "options": {
+                "mimPath": "mims/en-us/oobe/response_next.mim",
+                "getPromptData": [
+                    "() => {",
+                    "\tvar request = require('request');",
+                    "\tvar TOKEN = \"lzSML0kfMeEysMPzdmnclVdqI7TETCA1UulEJ9tRJswdKtaOGpVxWh8M74dz3tWDTmft96To7M9T2qcCTOTkQyHDZ2c40DZDdqwqVssu2reqxhmIOZC6STJQhkvzKnEy7gaf1vlxNBbWJ3Zs2F8hnL\";",
+                    "",
+                    "\tvar options = {",
+                    "  \t\turi: 'https://cloud.augmentedworkforce.com/cloqq/execute/',",
+                    "  \t\tmethod: 'POST',",
+                    "\t\t  json: {",
+                    "\t\t    \"robot_id\" : \"cad342b9-27cb-40fe-806d-640a78673cbb\",",
+                    "\t\t    \"robot_token\" : \"c59e3ff0-89cc-4d9a-ba4e-595bc306817e\",",
+                    "\t\t    \"cloqq_access_token\" : TOKEN,",
+                    "\t\t    \"actions\" : [{\"name\": \"go_to_next_step\"},],",
+                    "\t\t  }",
+                    "\t};",
+                    "",
+                    "\trequest(options, function (error, response, body) {",
+                    "\t  if (!error && response.statusCode == 200) {",
+                    "\t    console.log(body.id) // Print the shortened url.",
+                    "\t  }",
+                    "\t});",
+                    "\treturn {};",
+                    "}",
+                    "",
+                    ""
+                ]
+            },
+            "name": "response_next"
+        },
+        {
+            "class": "Mim.Announcement",
+            "clazz": "Mim.Announcement",
+            "asset-pack": "core",
+            "loc": "-465.76627124746193 -490.911423749154",
+            "id": "0d667648-a516-45af-9172-c2fef8a31083",
+            "options": {
+                "mimPath": "mims/en-us/oobe/response_prev.mim",
+                "getPromptData": [
+                    "() => {",
+                    "\tvar request = require('request');",
+                    "\tvar TOKEN = \"lzSML0kfMeEysMPzdmnclVdqI7TETCA1UulEJ9tRJswdKtaOGpVxWh8M74dz3tWDTmft96To7M9T2qcCTOTkQyHDZ2c40DZDdqwqVssu2reqxhmIOZC6STJQhkvzKnEy7gaf1vlxNBbWJ3Zs2F8hnL\";",
+                    "",
+                    "\tvar options = {",
+                    "  \t\turi: 'https://cloud.augmentedworkforce.com/cloqq/execute/',",
+                    "  \t\tmethod: 'POST',",
+                    "\t\t  json: {",
+                    "\t\t    \"robot_id\" : \"cad342b9-27cb-40fe-806d-640a78673cbb\",",
+                    "\t\t    \"robot_token\" : \"c59e3ff0-89cc-4d9a-ba4e-595bc306817e\",",
+                    "\t\t    \"cloqq_access_token\" : TOKEN,",
+                    "\t\t    \"actions\" : [{\"name\": \"go_to_previous_step\"},],",
+                    "\t\t  }",
+                    "\t};",
+                    "",
+                    "\trequest(options, function (error, response, body) {",
+                    "\t  if (!error && response.statusCode == 200) {",
+                    "\t    console.log(body.id) // Print the shortened url.",
+                    "\t  }",
+                    "\t});",
+                    "\treturn {};",
+                    "}",
+                    "",
+                    ""
+                ]
+            },
+            "name": "response_prev"
+        },
+        {
+            "class": "Mim.Announcement",
+            "clazz": "Mim.Announcement",
+            "asset-pack": "core",
+            "loc": "-59.836601661309416 -481.32284749830796",
+            "id": "a81dda8c-9290-4590-b4cd-6023f33ef013",
+            "options": {
+                "mimPath": "mims\\en-us\\oobe\\response_repeat.mim",
+                "getPromptData": [
+                    "() => {",
+                    "\treturn {};",
+                    "}",
+                    "",
+                    ""
+                ]
+            },
+            "name": "response_repeat"
+        },
+        {
+            "class": "Mim.Announcement",
+            "clazz": "Mim.Announcement",
+            "asset-pack": "core",
+            "loc": "-144.88400805429958 -285.6439687500002",
+            "id": "4d9c25b6-6eca-472c-9e44-138f11a54794",
+            "options": {
+                "mimPath": "mims\\en-us\\oobe\\response_expand.mim",
+                "getPromptData": [
+                    "() => {",
+                    "\tvar request = require('request');",
+                    "\tvar TOKEN = \"lzSML0kfMeEysMPzdmnclVdqI7TETCA1UulEJ9tRJswdKtaOGpVxWh8M74dz3tWDTmft96To7M9T2qcCTOTkQyHDZ2c40DZDdqwqVssu2reqxhmIOZC6STJQhkvzKnEy7gaf1vlxNBbWJ3Zs2F8hnL\";",
+                    "",
+                    "\tvar options = {",
+                    "  \t\turi: 'https://cloud.augmentedworkforce.com/cloqq/execute/',",
+                    "  \t\tmethod: 'POST',",
+                    "\t\t  json: {",
+                    "\t\t    \"robot_id\" : \"cad342b9-27cb-40fe-806d-640a78673cbb\",",
+                    "\t\t    \"robot_token\" : \"c59e3ff0-89cc-4d9a-ba4e-595bc306817e\",",
+                    "\t\t    \"cloqq_access_token\" : TOKEN,",
+                    "\t\t    \"actions\" : [{\"name\": \"expand_image\"},],",
+                    "\t\t  }",
+                    "\t};",
+                    "",
+                    "\trequest(options, function (error, response, body) {",
+                    "\t  if (!error && response.statusCode == 200) {",
+                    "\t    console.log(body.id) // Print the shortened url.",
+                    "\t  }",
+                    "\t});",
+                    "\treturn {};",
+                    "}",
+                    "",
+                    ""
+                ]
+            },
+            "name": "response_expand"
+        }
+    ],
+    "linkDataArray": [
+        {
+            "from": "b9f977cb-76a3-411a-b348-b5a9a001623e",
+            "to": "a42f06cc-3846-4a21-807f-c75205334c7a",
+            "fromPort": "",
+            "toPort": ""
+        },
+        {
+            "from": "943fb90c-8699-4eb6-9de1-a1cddc841c94",
+            "to": "35c46a37-f6ee-49e6-bf50-21284f463d49",
+            "fromPort": "",
+            "toPort": ""
+        },
+        {
+            "from": "35c46a37-f6ee-49e6-bf50-21284f463d49",
+            "to": "3c613b0e-b7ca-40ad-b9d0-8d09548752f1",
+            "fromPort": "",
+            "toPort": "",
+            "text": "nextStep",
+            "segmentOffset": "44.88767440476187 54.15324077380953"
+        },
+        {
+            "from": "35c46a37-f6ee-49e6-bf50-21284f463d49",
+            "to": "0d667648-a516-45af-9172-c2fef8a31083",
+            "fromPort": "",
+            "toPort": "",
+            "text": "prevStep",
+            "segmentOffset": "22.669107738095192 -51.40714851190478"
+        },
+        {
+            "from": "3c613b0e-b7ca-40ad-b9d0-8d09548752f1",
+            "to": "35c46a37-f6ee-49e6-bf50-21284f463d49",
+            "fromPort": "",
+            "toPort": "",
+            "text": ""
+        },
+        {
+            "from": "0d667648-a516-45af-9172-c2fef8a31083",
+            "to": "35c46a37-f6ee-49e6-bf50-21284f463d49",
+            "fromPort": "",
+            "toPort": "",
+            "text": ""
+        },
+        {
+            "from": "35c46a37-f6ee-49e6-bf50-21284f463d49",
+            "to": "a81dda8c-9290-4590-b4cd-6023f33ef013",
+            "fromPort": "",
+            "toPort": "",
+            "text": "repeat"
+        },
+        {
+            "from": "a81dda8c-9290-4590-b4cd-6023f33ef013",
+            "to": "35c46a37-f6ee-49e6-bf50-21284f463d49",
+            "fromPort": "",
+            "toPort": "",
+            "text": ""
+        },
+        {
+            "from": "35c46a37-f6ee-49e6-bf50-21284f463d49",
+            "to": "4d9c25b6-6eca-472c-9e44-138f11a54794",
+            "fromPort": "",
+            "toPort": "",
+            "text": "expand"
+        },
+        {
+            "from": "4d9c25b6-6eca-472c-9e44-138f11a54794",
+            "to": "35c46a37-f6ee-49e6-bf50-21284f463d49",
+            "fromPort": "",
+            "toPort": "",
+            "text": ""
+        }
+    ]
+}
