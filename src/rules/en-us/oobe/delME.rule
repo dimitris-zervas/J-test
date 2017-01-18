@@ -1,0 +1,81 @@
+# ------ SUBRULES
+# subrules start with $
+# TopRule = (
+#     $subrule_name {return_variable='string'}
+# };
+#
+# subrule_name = phrase to listen for;
+
+
+
+# TopRule = (
+#         $flight {book = 'air'} |
+#         $hotel {book = 'lodging'}
+#     );
+#
+#     flight  = reserve me a flight;
+#     hotel = reserve me a hotel;
+
+
+# ------ WILDCARDS
+# wildcards start with $*
+
+# TopRule = $* (
+#     $flight {book='air'} |
+#     $hotel  {book='lodging'}
+# ) $*;
+#
+# flight = reserve $* flight;
+# hotel = reserve $* hotel;
+
+# ------ RETURN AND REFERENCE VARIABLE
+
+# TopRule = $* (
+#     $flight {book='air'} |
+#     $hotel  {book='lodging'}
+# ) for $person {name=person.who};
+#
+# flight = reserve $* flight;
+# hotel = reserve $* hotel;
+#
+# person = me {who='me'} | $* {who='notMe'} ;
+
+# ------ USE INTERNAL VARIABLES
+# internal variables cannot be used outside of the rule file. Starts
+# with (_) underscore
+
+# TopRule = $* (
+#     $flight {book='air'} |
+#     $hotel  {book='lodging'}
+# ) for $person {name=person._who};
+#
+# flight = reserve $* flight;
+# hotel = reserve $* hotel;
+#
+# person = me {_who='me'} | $* {_who='notMe'} ;
+
+
+# ------- FACTORY RULES
+TopRule = $*  ($*) ?
+            ( $count {num=count._num} ) ?
+            ($NEXT_STEP{cmd='go_to_next_step'}) ?
+            ($PREV_STEP){cmd='go_to_prev_step'} ?
+            [step?s] ?
+            (
+                $NEXT_N {cmd='next-n-steps'} |
+                $PREV_N {cmd='prev-n-steps'}
+                # $NEXT_STEP {cmd='go_to_next_step'}
+            ) ?
+            ($count {num=count._num}) ?
+            ($REPEAT {cmd='repeat'}) ?
+            ($EXPAND) {cmd='expand-window'}
+             $*;
+
+EXPAND = expand | shrink | bigger | close;
+REPEAT = repeat | (do here);
+NEXT_STEP = next | continue;
+PREV_STEP = previous;
+# init = go | move ;
+NEXT_N = forward | ahead;
+PREV_N = back | backwards;
+count @= (one | two | three | four | five | six | seven){_num=_parsed};

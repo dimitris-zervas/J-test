@@ -9,20 +9,20 @@ COMMAND =
 NEXT_STEP = (
                 (go to the next step) |
                 (let\'s go to the next step) |
-                (what is next)
+                (what is next) | next | (next step)
             ) {_slotaction='nextStep'};
 
 PREV_STEP = (
                 (go to the previous step) |
                 (let\'s go to the previous step) |
                 (go back one step) |
-                (go back)
+                (go back) | (previous step)
             ) {_slotaction='prevStep'};
 
 REPEAT = (
                 (can you repeat) |
                 (what do I have to do here) |
-                (can you explain again) | (repeat)
+                (can you explain again) | repeat
          ) {_slotaction='repeat'};
 
 EXPAND_IMG = (

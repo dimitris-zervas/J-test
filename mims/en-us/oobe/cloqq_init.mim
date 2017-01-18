@@ -1,6 +1,6 @@
 {
 	"mim_type": "question",
-	"rule_name": "rules/en-us/oobe/init.fst",
+	"rule_name": "rules/en-us/oobe/delME.fst",
 	"gui": {
 		"type": "Menu",
 		"data": null
