@@ -63,12 +63,12 @@ TopRule = $*  ($*) ?
             [step?s] ?
             (
                 $NEXT_N {cmd='next_n_steps'} |
-                $PREV_N {cmd='prev_n_steps'}
+                $PREV_N {cmd='previous_n_steps'}
                 # $NEXT_STEP {cmd='go_to_next_step'}
             ) ?
             ($count {num=count._num}) ?
             ($REPEAT {cmd='repeat'}) ?
-            ($EXPAND) {cmd='expand-window'}
+            ($EXPAND) {cmd='expand_image'}
              $*;
 
 EXPAND = expand | shrink | bigger | close;

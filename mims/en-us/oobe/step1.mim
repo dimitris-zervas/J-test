@@ -16,7 +16,7 @@
 			"prompt_sub_category": "AN",
 			"index": 1,
 			"condition": "",
-			"prompt": "Get sure that you have all the ingredients with you to start with the activity. Now think about what kind of robot you want to create. You can draw a sketch to plan the colors you want to use and to get an idea about how you are going to decorate your robot. It can be an enjoyable, funny or scary robot.  You choose!",
+			"prompt": "Get sure, that you have all the ingredients with you, to start with the activity. Now, think about what kind of robot you want to create. You can draw a sketch, to plan the colors you want to use, and to get an idea about how you are going to decorate your robot. It can be an enjoyable, funny or scary robot.  You choose!",
 			"media": "TTS",
 			"prompt_id": "ID_STEP_1",
 			"weight": 1

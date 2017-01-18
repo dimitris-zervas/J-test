@@ -16,7 +16,7 @@
 			"prompt_sub_category": "AN",
 			"index": 1,
 			"condition": "",
-			"prompt": "Now join the DC motor with the container using the masking tape. Place the motor in a way the shaft extends beyond the edge of the container.",
+			"prompt": "Now, join the DC motor with the container using the masking tape. Place the motor, in a way the shaft extends beyond the edge of the container.",
 			"media": "TTS",
 			"prompt_id": "ID_STEP_3",
 			"weight": 1
