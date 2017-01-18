@@ -59,11 +59,11 @@
 TopRule = $*  ($*) ?
             ( $count {num=count._num} ) ?
             ($NEXT_STEP{cmd='go_to_next_step'}) ?
-            ($PREV_STEP){cmd='go_to_prev_step'} ?
+            ($PREV_STEP){cmd='go_to_previous_step'} ?
             [step?s] ?
             (
-                $NEXT_N {cmd='next-n-steps'} |
-                $PREV_N {cmd='prev-n-steps'}
+                $NEXT_N {cmd='next_n_steps'} |
+                $PREV_N {cmd='prev_n_steps'}
                 # $NEXT_STEP {cmd='go_to_next_step'}
             ) ?
             ($count {num=count._num}) ?
