@@ -370,6 +370,21 @@
             "id": "7ae16c7c-e5aa-4457-803f-f58a6fce68e4",
             "name": "step5",
             "size": "75 38.82284749830794"
+        },
+        {
+            "class": "Flow.Catch",
+            "clazz": "Flow.Catch",
+            "asset-pack": "core",
+            "loc": "-155.78760363063725 -507",
+            "id": "fc97f657-2fdc-41a5-80f8-5d4202161c16",
+            "options": {
+                "getTransition": [
+                    "(exception, payload) => {",
+                    "\treturn '';",
+                    "}"
+                ]
+            },
+            "name": "~InteractionError"
         }
     ],
     "linkDataArray": [
@@ -654,6 +669,27 @@
                 "class": "go.Spot",
                 "x": 0.8676717210057189,
                 "y": 0,
+                "offsetX": 0,
+                "offsetY": 0
+            }
+        },
+        {
+            "from": "fc97f657-2fdc-41a5-80f8-5d4202161c16",
+            "to": "35c46a37-f6ee-49e6-bf50-21284f463d49",
+            "fromPort": "",
+            "toPort": "",
+            "text": "",
+            "toSpot": {
+                "class": "go.Spot",
+                "x": 0.7320939892287278,
+                "y": 0,
+                "offsetX": 0,
+                "offsetY": 0
+            },
+            "fromSpot": {
+                "class": "go.Spot",
+                "x": 0,
+                "y": 0.5195005503952305,
                 "offsetX": 0,
                 "offsetY": 0
             }

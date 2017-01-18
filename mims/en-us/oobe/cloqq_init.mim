@@ -33,6 +33,26 @@
 			"media": "TTS",
 			"prompt_id": "ID_INIT_ERR",
 			"weight": 1
+		},
+		{
+			"prompt_category": "Errors",
+			"prompt_sub_category": "NM",
+			"index": 1,
+			"condition": "",
+			"prompt": "Nop. My ears don't work today. Sorry. Can you repeat?",
+			"media": "TTS",
+			"prompt_id": "IDsdoif",
+			"weight": 1
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "Q",
+			"index": 1,
+			"condition": "",
+			"prompt": "Ready?",
+			"media": "TTS",
+			"prompt_id": "ID_INIT_2",
+			"weight": 1
 		}
 	]
 }
