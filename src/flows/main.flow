@@ -9,7 +9,7 @@
         {
             "class": "Flow.Begin",
             "name": "Begin",
-            "loc": "-317.23719278489517 -538.9717375",
+            "loc": "-317.23719278489517 -559.9717375",
             "id": "943fb90c-8699-4eb6-9de1-a1cddc841c94",
             "options": {
                 "inputParameters": [
@@ -105,7 +105,11 @@
             "class": "Mim.Announcement",
             "clazz": "Mim.Announcement",
             "asset-pack": "core",
+<<<<<<< Updated upstream
             "loc": "-52.8366016613094 -408.56007566230613",
+=======
+            "loc": "-43.373566557134 -398.7372281639982",
+>>>>>>> Stashed changes
             "id": "3c613b0e-b7ca-40ad-b9d0-8d09548752f1",
             "options": {
                 "mimPath": "mims/en-us/oobe/AW_step.mim",
@@ -114,12 +118,31 @@
                     "\tlet cmd = notepad.Command;",
                     "\tlet action = \"\";",
                     "\t",
+<<<<<<< Updated upstream
                     "\tif (cmd == \"nextStep\") {",
                     "\t\taction = \"go_to_next_step\";",
                     "\t}else if (cmd == \"prevStep\") {",
                     "\t\taction = \"go_to_prev_step\";",
                     "\t}else if (cmd == \"repeat\") {",
                     "\t\taction = \"repeat\";",
+=======
+                    "\tif (action == \"go_to_next_step\") {",
+                    "\t\tnotepad.step_transition = \"Next\";",
+                    "\t\tnotepad.stepNo += 1;",
+                    "\t}else if (action == \"go_to_previous_step\") {",
+                    "\t\tnotepad.step_transition = \"Previous\";",
+                    "\t\tnotepad.stepNo -= 1;",
+                    "\t}else if (action == \"next_n_steps\") {",
+                    "\t\tnotepad.step_transition = \"Next\";\t",
+                    "\t\tnotepad.stepNo += num;",
+                    "\t}else if (action == \"previous_n_steps\") {",
+                    "\t\tnotepad.step_transition = \"Previous\";",
+                    "\t\tnotepad.stepNo -= num;",
+                    "\t}else if (action == \"repeat\") {",
+                    "\t\tnotepad.step_transition = \"Next\";",
+                    "\t}else if (action == \"expand_image\") {",
+                    "\t\tnotepad.step_transition = \"Image\";",
+>>>>>>> Stashed changes
                     "\t}",
                     "\tconsole.log(\"Current Step No: \" + notepad.stepNo);",
                     "\t",
@@ -157,12 +180,17 @@
             "class": "Flow.Eval",
             "clazz": "Flow.Eval",
             "asset-pack": "core",
+<<<<<<< Updated upstream
             "loc": "-16.26475613232931 -288.2163708531541",
+=======
+            "loc": "-58.373566557134 -281.7163708531541",
+>>>>>>> Stashed changes
             "id": "82b49250-6809-4664-b0df-18524a4781a0",
             "options": {
                 "Script": [
                     "() => {",
                     "  var step = notepad.stepNo;",
+<<<<<<< Updated upstream
                     "  console.log(\"check_step: \" + step);",
                     "  let transition = \"\";",
                     "  if (step == 1) {",
@@ -177,11 +205,53 @@
                     "    transition = \"s5\";",
                     "  }",
                     "  ",
+=======
+                    "  var cmd = notepad.Command;",
+                    "  console.log(\"Check_step: >>> \");",
+                    "  console.log(step);",
+                    "  var transition = \"\";",
+                    "  ",
+                    "  if (notepad.step_transition == \"Next\") {",
+                    "    if (step == 1) {",
+                    "      transition = \"s1\";",
+                    "      notepad.transition = \"s1\";",
+                    "    }else if (step == 2) {",
+                    "      transition = \"s2\";",
+                    "      notepad.transition = \"s2\";",
+                    "    }else if (step == 3) {",
+                    "      transition = \"s3\";",
+                    "      notepad.transition = \"s3\";",
+                    "    }else if (step == 4) {",
+                    "      transition = \"s4\";",
+                    "      notepad.transition = \"s4\";",
+                    "    }else if (step == 5) {",
+                    "      transition = \"s5\";",
+                    "      notepad.transition = \"s5\";",
+                    "    }",
+                    "    return transition;",
+                    "  }else if (notepad.step_transition == \"Aux\") {",
+                    "    transition = 'aux';",
+                    "    return transition;",
+                    "  }else if (notepad.step_trasition == \"Image\") {",
+                    "    transition = 'image';",
+                    "    notepad.transition = 'expand_image';",
+                    "  }else if (notepad.step_transition == 'Previous') {",
+                    "    transition = 'previous';",
+                    "    console.log(\"<<Check>> Previous\");",
+                    "    notepad.transition = 'previous';",
+                    "  }",
+                    "  // if (cmd == \"expand_image\") {",
+                    "  //   transition = \"expand_image\";",
+                    "  //   ",
+                    "  // }",
+                    "  notepad.step_transition = \"False\";",
+>>>>>>> Stashed changes
                     "  return transition;",
                     "}"
                 ]
             },
             "name": "check_step",
+<<<<<<< Updated upstream
             "size": "222 64"
         },
         {
@@ -202,6 +272,9 @@
             "id": "e61ce5a4-1c4d-4a2c-bcfb-63bc1a2f9fc8",
             "name": "step2",
             "size": "67 39"
+=======
+            "size": "136 51"
+>>>>>>> Stashed changes
         },
         {
             "class": "Flow.Eval",
@@ -212,7 +285,7 @@
             "options": {
                 "Script": [
                     "() => {",
-                    "    notepad.stepNo = 1;",
+                    "    notepad.stepNo = 3;",
                     "    notepad.Command = \"\";",
                     "    return '';",
                     "}"
@@ -224,7 +297,12 @@
             "class": "Mim.Announcement",
             "clazz": "Mim.Announcement",
             "asset-pack": "core",
+<<<<<<< Updated upstream
             "loc": "-59.836601661309416 -195.50000000000006",
+=======
+            "loc": "-174.39641405544194 -494",
+            "id": "fc97f657-2fdc-41a5-80f8-5d4202161c16",
+>>>>>>> Stashed changes
             "options": {
                 "mimPath": "mims\\en-us\\oobe\\step1.mim",
                 "getPromptData": [
@@ -243,7 +321,12 @@
             "class": "Mim.Announcement",
             "clazz": "Mim.Announcement",
             "asset-pack": "core",
+<<<<<<< Updated upstream
             "loc": "-60.836601661309416 -74.5",
+=======
+            "loc": "-127.39641405544195 -181",
+            "id": "201f444b-754c-4087-a85c-5a7509e089c5",
+>>>>>>> Stashed changes
             "options": {
                 "mimPath": "mims\\en-us\\oobe\\step3.mim",
                 "getPromptData": [
@@ -390,6 +473,7 @@
             },
             "toSpot": {
                 "class": "go.Spot",
+<<<<<<< Updated upstream
                 "x": 0.7486273243829392,
                 "y": 1,
                 "offsetX": 0,
@@ -407,6 +491,10 @@
                 "class": "go.Spot",
                 "x": 1,
                 "y": 0.37466216216216247,
+=======
+                "x": 0.4968874379201029,
+                "y": 0,
+>>>>>>> Stashed changes
                 "offsetX": 0,
                 "offsetY": 0
             },
@@ -426,8 +514,13 @@
             "text": "s1",
             "toSpot": {
                 "class": "go.Spot",
+<<<<<<< Updated upstream
                 "x": 1,
                 "y": 0.47856060606060835,
+=======
+                "x": 0,
+                "y": 0.4725484383477875,
+>>>>>>> Stashed changes
                 "offsetX": 0,
                 "offsetY": 0
             },

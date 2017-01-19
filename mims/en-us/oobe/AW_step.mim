@@ -16,7 +16,7 @@
 			"prompt_sub_category": "AN",
 			"index": 1,
 			"condition": "",
-			"prompt": "Alright",
+			"prompt": "Of course",
 			"media": "TTS",
 			"prompt_id": "ID_Resp_1",
 			"weight": 1
@@ -26,7 +26,7 @@
 			"prompt_sub_category": "AN",
 			"index": 1,
 			"condition": "",
-			"prompt": "Of course",
+			"prompt": "Alright",
 			"media": "TTS",
 			"prompt_id": "ID_Resp_2",
 			"weight": 1
