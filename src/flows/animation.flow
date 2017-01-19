@@ -10,7 +10,7 @@
             "class": "Flow.Begin",
             "clazz": "Flow.Begin",
             "asset-pack": "core",
-            "loc": "-272.921875 -184",
+            "loc": "-326.921875 -186",
             "id": "45452948-d065-4123-825d-9c71d1518b55",
             "options": {
                 "inputParameters": [
@@ -222,7 +222,7 @@
             "class": "Flow.Eval",
             "clazz": "Flow.Eval",
             "asset-pack": "core",
-            "loc": "-166.20775350416733 -162.5333277408532",
+            "loc": "-219.91811626126434 -164.5333277408532",
             "id": "3c3791ed-7222-4bba-9a80-494e605b99ef",
             "options": {
                 "Script": [
@@ -269,6 +269,106 @@
                 ]
             },
             "name": ""
+        },
+        {
+            "class": "LookAt",
+            "clazz": "LookAt",
+            "asset-pack": "core",
+            "loc": "-121.921875 -343",
+            "id": "a3aadcd3-dbeb-4209-922b-e018becedcb1",
+            "options": {
+                "getTarget": [
+                    "() => {",
+                    "    return {x: 0, y: 0, z: 0};",
+                    "}"
+                ],
+                "isContinuous": false,
+                "config": [
+                    "(lookAt) => {",
+                    "}"
+                ]
+            },
+            "name": "try"
+        },
+        {
+            "class": "LookAt",
+            "clazz": "LookAt",
+            "asset-pack": "core",
+            "loc": "-121.921875 -262.9421040901048",
+            "id": "559c4c95-5c62-4c74-b397-0b726b318eab",
+            "options": {
+                "getTarget": [
+                    "() => {",
+                    "    return {x: 0, y: 0, z: 0};",
+                    "}"
+                ],
+                "isContinuous": false,
+                "config": [
+                    "(lookAt) => {",
+                    "}"
+                ]
+            },
+            "name": "try"
+        },
+        {
+            "class": "LookAt",
+            "clazz": "LookAt",
+            "asset-pack": "core",
+            "loc": "-121.921875 -176.4710520450524",
+            "id": "3d3a3c9b-d8b6-4f7b-92a8-1c3dd0d2258f",
+            "options": {
+                "getTarget": [
+                    "() => {",
+                    "    return {x: 0, y: 0, z: 0};",
+                    "}"
+                ],
+                "isContinuous": false,
+                "config": [
+                    "(lookAt) => {",
+                    "}"
+                ]
+            },
+            "name": "try"
+        },
+        {
+            "class": "LookAt",
+            "clazz": "LookAt",
+            "asset-pack": "core",
+            "loc": "-121.921875 0",
+            "id": "ad6cf0bd-94ed-4149-a8da-83fe32cabc5c",
+            "options": {
+                "getTarget": [
+                    "() => {",
+                    "    return {x: 0, y: 0, z: 0};",
+                    "}"
+                ],
+                "isContinuous": false,
+                "config": [
+                    "(lookAt) => {",
+                    "}"
+                ]
+            },
+            "name": "try"
+        },
+        {
+            "class": "LookAt",
+            "clazz": "LookAt",
+            "asset-pack": "core",
+            "loc": "-121.921875 -85",
+            "id": "71f442fa-f828-47fd-b92f-8209dd34129e",
+            "options": {
+                "getTarget": [
+                    "() => {",
+                    "    return {x: 0, y: 0, z: 0};",
+                    "}"
+                ],
+                "isContinuous": false,
+                "config": [
+                    "(lookAt) => {",
+                    "}"
+                ]
+            },
+            "name": "try"
         }
     ],
     "linkDataArray": [
@@ -412,83 +512,6 @@
             "toPort": ""
         },
         {
-            "from": "3c3791ed-7222-4bba-9a80-494e605b99ef",
-            "to": "6a88b359-307d-4845-8c72-4762f857a9fc",
-            "fromPort": "",
-            "toPort": "",
-            "text": "step3"
-        },
-        {
-            "from": "3c3791ed-7222-4bba-9a80-494e605b99ef",
-            "to": "67532b82-3029-4904-9362-0a8f98d001c9",
-            "fromPort": "",
-            "toPort": "",
-            "text": "step1",
-            "toSpot": {
-                "class": "go.Spot",
-                "x": 0,
-                "y": 0.5362687100878367,
-                "offsetX": 0,
-                "offsetY": 0
-            }
-        },
-        {
-            "from": "3c3791ed-7222-4bba-9a80-494e605b99ef",
-            "to": "b38c1810-c1bb-478f-a674-e8db2867893c",
-            "fromPort": "",
-            "toPort": "",
-            "text": "step2",
-            "toSpot": {
-                "class": "go.Spot",
-                "x": 0,
-                "y": 0.5709850319297306,
-                "offsetX": 0,
-                "offsetY": 0
-            },
-            "fromSpot": {
-                "class": "go.Spot",
-                "x": 0.6997611476574235,
-                "y": 0,
-                "offsetX": 0,
-                "offsetY": 0
-            }
-        },
-        {
-            "from": "3c3791ed-7222-4bba-9a80-494e605b99ef",
-            "to": "5da0222b-c341-4ae2-9f0c-4e77566a1f92",
-            "fromPort": "",
-            "toPort": "",
-            "text": "step4",
-            "fromSpot": {
-                "class": "go.Spot",
-                "x": 0.7148793904189694,
-                "y": 1,
-                "offsetX": 0,
-                "offsetY": 0
-            },
-            "toSpot": {
-                "class": "go.Spot",
-                "x": 0,
-                "y": 0.5541443337574313,
-                "offsetX": 0,
-                "offsetY": 0
-            }
-        },
-        {
-            "from": "3c3791ed-7222-4bba-9a80-494e605b99ef",
-            "to": "0c43c3dd-4ca4-426d-90e5-5e9caba7af96",
-            "fromPort": "",
-            "toPort": "",
-            "text": "step5",
-            "toSpot": {
-                "class": "go.Spot",
-                "x": 0,
-                "y": 0.5183930864182422,
-                "offsetX": 0,
-                "offsetY": 0
-            }
-        },
-        {
             "from": "be7d8ea0-5460-4624-9b48-38e0bab7d452",
             "to": "1a79dd0a-7f3f-4554-ad95-25ad4942da83",
             "fromPort": "",
@@ -559,6 +582,111 @@
                 "offsetY": 0
             },
             "segmentOffset": "29 -1.9999999999999858"
+        },
+        {
+            "from": "3c3791ed-7222-4bba-9a80-494e605b99ef",
+            "to": "a3aadcd3-dbeb-4209-922b-e018becedcb1",
+            "fromPort": "",
+            "toPort": "",
+            "text": "step1",
+            "toSpot": {
+                "class": "go.Spot",
+                "x": 0,
+                "y": 0.3932637207310803,
+                "offsetX": 0,
+                "offsetY": 0
+            },
+            "fromSpot": {
+                "class": "go.Spot",
+                "x": 0.1813620876138686,
+                "y": 0,
+                "offsetX": 0,
+                "offsetY": 0
+            }
+        },
+        {
+            "from": "3c3791ed-7222-4bba-9a80-494e605b99ef",
+            "to": "ad6cf0bd-94ed-4149-a8da-83fe32cabc5c",
+            "fromPort": "",
+            "toPort": "",
+            "text": "step5",
+            "toSpot": {
+                "class": "go.Spot",
+                "x": 0,
+                "y": 0.5898955810966204,
+                "offsetX": 0,
+                "offsetY": 0
+            },
+            "fromSpot": {
+                "class": "go.Spot",
+                "x": 0.22671681589850648,
+                "y": 1,
+                "offsetX": 0,
+                "offsetY": 0
+            }
+        },
+        {
+            "from": "3c3791ed-7222-4bba-9a80-494e605b99ef",
+            "to": "559c4c95-5c62-4c74-b397-0b726b318eab",
+            "fromPort": "",
+            "toPort": "",
+            "text": "step2"
+        },
+        {
+            "from": "3c3791ed-7222-4bba-9a80-494e605b99ef",
+            "to": "3d3a3c9b-d8b6-4f7b-92a8-1c3dd0d2258f",
+            "fromPort": "",
+            "toPort": "",
+            "text": "step3",
+            "fromSpot": {
+                "class": "go.Spot",
+                "x": 1,
+                "y": 0.5155925210312394,
+                "offsetX": 0,
+                "offsetY": 0
+            }
+        },
+        {
+            "from": "3d3a3c9b-d8b6-4f7b-92a8-1c3dd0d2258f",
+            "to": "6a88b359-307d-4845-8c72-4762f857a9fc",
+            "fromPort": "",
+            "toPort": "",
+            "text": ""
+        },
+        {
+            "from": "559c4c95-5c62-4c74-b397-0b726b318eab",
+            "to": "b38c1810-c1bb-478f-a674-e8db2867893c",
+            "fromPort": "",
+            "toPort": "",
+            "text": ""
+        },
+        {
+            "from": "a3aadcd3-dbeb-4209-922b-e018becedcb1",
+            "to": "67532b82-3029-4904-9362-0a8f98d001c9",
+            "fromPort": "",
+            "toPort": "",
+            "text": ""
+        },
+        {
+            "from": "71f442fa-f828-47fd-b92f-8209dd34129e",
+            "to": "5da0222b-c341-4ae2-9f0c-4e77566a1f92",
+            "fromPort": "",
+            "toPort": "",
+            "text": ""
+        },
+        {
+            "from": "ad6cf0bd-94ed-4149-a8da-83fe32cabc5c",
+            "to": "0c43c3dd-4ca4-426d-90e5-5e9caba7af96",
+            "fromPort": "",
+            "toPort": "",
+            "text": ""
+        },
+        {
+            "from": "3c3791ed-7222-4bba-9a80-494e605b99ef",
+            "to": "71f442fa-f828-47fd-b92f-8209dd34129e",
+            "fromPort": "",
+            "toPort": "",
+            "text": "step4"
         }
     ]
 }

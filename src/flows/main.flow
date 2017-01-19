@@ -9,7 +9,7 @@
         {
             "class": "Flow.Begin",
             "name": "Begin",
-            "loc": "-317.23719278489517 -538.9717375",
+            "loc": "-317.1319071403639 -654.9717375",
             "id": "943fb90c-8699-4eb6-9de1-a1cddc841c94",
             "options": {
                 "inputParameters": [
@@ -49,7 +49,6 @@
                     "\tlet mimState = results.state;",
                     "\tlet asrResults = results.asrResults;",
                     "\tlet transition = results.firstGrammarTag;",
-                    "\t",
                     "\t// Get the 'cmd' from the rule",
                     "\tnotepad.Command = asrResults.NLParse.cmd;",
                     "\tblackboard.Command = notepad.Command;",
@@ -174,51 +173,52 @@
             "class": "Flow.Eval",
             "clazz": "Flow.Eval",
             "asset-pack": "core",
-            "loc": "-21.264756132329296 -288.2163708531541",
+            "loc": "-15.264756132329296 -288.2163708531541",
             "id": "82b49250-6809-4664-b0df-18524a4781a0",
             "options": {
                 "Script": [
                     "() => {",
-                    "  var step = notepad.stepNo;",
-                    "  var cmd = notepad.Command;",
-                    "  console.log(\"Check_step: >>> \");",
-                    "  console.log(step);",
-                    "  var transition = \"\";",
-                    "  ",
-                    "  if (notepad.step_transition == \"True\") {",
-                    "    if (step == 1) {",
-                    "      transition = \"s1\";",
-                    "      notepad.transition = \"s1\";",
-                    "    }else if (step == 2) {",
-                    "      transition = \"s2\";",
-                    "      notepad.transition = \"s2\";",
-                    "    }else if (step == 3) {",
-                    "      transition = \"s3\";",
-                    "      notepad.transition = \"s3\";",
-                    "    }else if (step == 4) {",
-                    "      transition = \"s4\";",
-                    "      notepad.transition = \"s4\";",
-                    "    }else if (step == 5) {",
-                    "      transition = \"s5\";",
-                    "      notepad.transition = \"s5\";",
-                    "    }",
-                    "  }",
+                    " var step = notepad.stepNo;",
+                    " var cmd = notepad.Command;",
+                    " console.log(\"Check_step: >>> \");",
+                    " console.log(step);",
+                    " var transition = \"\";",
+                    " ",
+                    " if (notepad.step_transition == \"True\") {",
+                    "   if (step == 1) {",
+                    "     transition = \"s1\";",
+                    "     notepad.transition = \"s1\";",
+                    "   }else if (step == 2) {",
+                    "     transition = \"s2\";",
+                    "     notepad.transition = \"s2\";",
+                    "   }else if (step == 3) {",
+                    "     transition = \"s3\";",
+                    "     notepad.transition = \"s3\";",
+                    "   }else if (step == 4) {",
+                    "     transition = \"s4\";",
+                    "     notepad.transition = \"s4\";",
+                    "   }else if (step == 5) {",
+                    "     transition = \"s5\";",
+                    "     notepad.transition = \"s5\";",
+                    "   }",
+                    " }",
+                    "   if (cmd == \"expand_image\") {",
                     "    transition = \"aux\";",
-                    "    notepad.transition = 'expand_image';",
-                    "",
-                    "  notepad.step_transition = \"False\";",
-                    "  return transition;",
+                    "    notepad.transition = 'aux';",
+                    " }",
+                    " notepad.step_transition = \"False\";",
+                    " return transition;",
                     "}"
                 ]
             },
             "name": "check_step",
-            "size": "227 64"
+            "size": "221 64"
         },
         {
             "class": "Flow.Eval",
             "clazz": "Flow.Eval",
             "asset-pack": "core",
-            "loc": "-312.70453389244756 -408.56007566230613",
+            "loc": "-312.70453389244756 -443.1421797524109",
             "id": "16574095-2299-4f49-88de-c677f7dce395",
             "options": {
                 "Script": [
@@ -275,29 +275,121 @@
                 ]
             },
             "name": "animation"
+        },
+        {
+            "class": "PlayAnimation",
+            "clazz": "PlayAnimation",
+            "asset-pack": "core",
+            "loc": "-144.06141497096928 -284.1874228982065",
+            "id": "bb282e8e-3b54-46ab-ad28-8875bd26f6ad",
+            "options": {
+                "animPath": "image.keys",
+                "cache": true,
+                "upload": true,
+                "config": [
+                    "(animation) => {",
+                    "}"
+                ]
+            },
+            "name": "Expand"
+        },
+        {
+            "class": "Flow.Eval",
+            "clazz": "Flow.Eval",
+            "asset-pack": "core",
+            "loc": "192.890625 -528.1245513916016",
+            "id": "9593db42-b237-4dd1-9017-d29d735dec91",
+            "options": {
+                "Script": [
+                    "() => {",
+                    "    notepad.lookAtPosition = {x: 0, y: 0, z: 0.5};",
+                    "    return '';",
+                    "}"
+                ]
+            },
+            "name": "init2"
+        },
+        {
+            "class": "LookAt",
+            "clazz": "LookAt",
+            "asset-pack": "core",
+            "loc": "199.10807037353516 -443.1421797524109",
+            "id": "43697259-5155-40b8-b1ae-329cee85e2d5",
+            "options": {
+                "getTarget": [
+                    "() => {",
+                    "   ",
+                    "   let jibo = require('jibo');",
+                    "   let entity = jibo.lps.getClosestAudibleEntity();",
+                    "  //  let entity = jibo.lps.getClosestVisualEntity();",
+                    "",
+                    "   // valid if we have data and confidence is at least 0.6",
+                    "   let valid = (entity !== undefined && entity.confidence >= 0.2);",
+                    "",
+                    "   if (valid) {",
+                    "       //console.log(`valid entity: `, entity);",
+                    "       let pos = entity.position;",
+                    "       notepad.heardInitResponse = true;",
+                    "       pos = new jibo.animate.THREE.Vector3(pos.x, pos.y, pos.z);",
+                    "       pos.normalize();",
+                    " ",
+                    "       let newZ = pos.z;",
+                    "       if (newZ > 0.6) {",
+                    "           newZ = 0.6;",
+                    "       }",
+                    "       if (newZ < 0.3) {",
+                    "           newZ = 0.3;",
+                    "       }",
+                    "",
+                    "       notepad.lookAtPosition = {x: pos.x, y:pos.y, z: newZ};",
+                    "",
+                    "       console.log(`Heard you with ${entity.confidence} at ${notepad.lookAtPosition.x.toPrecision(3)}, ${notepad.lookAtPosition.y.toPrecision(3)}, ${notepad.lookAtPosition.z.toPrecision(3)}`);",
+                    "   } else {",
+                    "       let confid = undefined;",
+                    "       if (entity) {",
+                    "           confid = entity.confidence;",
+                    "       }",
+                    "",
+                    "       //console.log(`Conf=${confid} Can't hear you :(`);",
+                    "   }",
+                    "  ",
+                    "   return notepad.lookAtPosition;",
+                    "}"
+                ],
+                "isContinuous": false,
+                "config": [
+                    "(lookAt) => {",
+                    "}"
+                ]
+            },
+            "name": ""
+        },
+        {
+            "class": "Flow.Eval",
+            "clazz": "Flow.Eval",
+            "asset-pack": "core",
+            "loc": "318.890625 -443.1421797524109",
+            "id": "3e8879ca-82d1-4089-a428-1b574ea1d3c0",
+            "options": {
+                "Script": [
+                    "() => {",
+                    "  return '';",
+                    "}"
+                ]
+            },
+            "name": ""
+        },
+        {
+            "class": "Flow.Begin-Parallel",
+            "clazz": "Flow.Begin-Parallel",
+            "asset-pack": "core",
+            "loc": "188.46325175208366 -673",
+            "id": "e12815a7-19b9-4d47-a595-13cd10fe02cc",
+            "options": {},
+            "name": ""
         }
     ],
     "linkDataArray": [
-        {
-            "from": "943fb90c-8699-4eb6-9de1-a1cddc841c94",
-            "to": "16574095-2299-4f49-88de-c677f7dce395",
-            "fromPort": "",
-            "toPort": ""
-        },
-        {
-            "from": "16574095-2299-4f49-88de-c677f7dce395",
-            "to": "35c46a37-f6ee-49e6-bf50-21284f463d49",
-            "fromPort": "",
-            "toPort": "",
-            "text": "",
-            "toSpot": {
-                "class": "go.Spot",
-                "x": 0.3256520914137285,
-                "y": 0,
-                "offsetX": 0,
-                "offsetY": 0
-            }
-        },
         {
             "from": "3c613b0e-b7ca-40ad-b9d0-8d09548752f1",
             "to": "82b49250-6809-4664-b0df-18524a4781a0",
@@ -314,7 +406,7 @@
             "segmentOffset": "19.84499999999997 0",
             "fromSpot": {
                 "class": "go.Spot",
-                "x": 0.49927107994159825,
+                "x": 0.5468606288802774,
                 "y": 1,
                 "offsetX": 0,
                 "offsetY": 0
@@ -374,7 +466,82 @@
             "to": "35c46a37-f6ee-49e6-bf50-21284f463d49",
             "fromPort": "",
             "toPort": "",
+            "text": "",
+            "fromSpot": {
+                "class": "go.Spot",
+                "x": 0,
+                "y": 0.5720199574270258,
+                "offsetX": 0,
+                "offsetY": 0
+            }
+        },
+        {
+            "from": "82b49250-6809-4664-b0df-18524a4781a0",
+            "to": "bb282e8e-3b54-46ab-ad28-8875bd26f6ad",
+            "fromPort": "",
+            "toPort": "",
+            "text": "aux",
+            "fromSpot": {
+                "class": "go.Spot",
+                "x": 0,
+                "y": 0.5033807945805329,
+                "offsetX": 0,
+                "offsetY": 0
+            }
+        },
+        {
+            "from": "bb282e8e-3b54-46ab-ad28-8875bd26f6ad",
+            "to": "35c46a37-f6ee-49e6-bf50-21284f463d49",
+            "fromPort": "",
+            "toPort": "",
             "text": ""
+        },
+        {
+            "from": "16574095-2299-4f49-88de-c677f7dce395",
+            "to": "35c46a37-f6ee-49e6-bf50-21284f463d49",
+            "fromPort": "",
+            "toPort": "",
+            "text": "",
+            "toSpot": {
+                "class": "go.Spot",
+                "x": 0.46878351433966065,
+                "y": 0,
+                "offsetX": 0,
+                "offsetY": 0
+            }
+        },
+        {
+            "from": "9593db42-b237-4dd1-9017-d29d735dec91",
+            "to": "43697259-5155-40b8-b1ae-329cee85e2d5",
+            "fromPort": "",
+            "toPort": "",
+            "text": ""
+        },
+        {
+            "from": "43697259-5155-40b8-b1ae-329cee85e2d5",
+            "to": "3e8879ca-82d1-4089-a428-1b574ea1d3c0",
+            "fromPort": "",
+            "toPort": "",
+            "text": ""
+        },
+        {
+            "from": "3e8879ca-82d1-4089-a428-1b574ea1d3c0",
+            "to": "43697259-5155-40b8-b1ae-329cee85e2d5",
+            "fromPort": "",
+            "toPort": "",
+            "text": ""
+        },
+        {
+            "from": "e12815a7-19b9-4d47-a595-13cd10fe02cc",
+            "to": "9593db42-b237-4dd1-9017-d29d735dec91",
+            "fromPort": "",
+            "toPort": ""
+        },
+        {
+            "from": "943fb90c-8699-4eb6-9de1-a1cddc841c94",
+            "to": "16574095-2299-4f49-88de-c677f7dce395",
+            "fromPort": "",
+            "toPort": ""
         }
     ]
 }

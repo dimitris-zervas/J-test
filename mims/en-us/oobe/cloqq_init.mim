@@ -39,7 +39,7 @@
 			"prompt_sub_category": "NM",
 			"index": 1,
 			"condition": "",
-			"prompt": "Didn't got that. Can you repeat?",
+			"prompt": "Didn't get that. Can you repeat?",
 			"media": "TTS",
 			"prompt_id": "IDsdoif",
 			"weight": 1

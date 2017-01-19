@@ -25,6 +25,414 @@
                     }
                 }
             ]
+        },
+        {
+            "id": "4f67a5a161a647da909421dc57b536ec",
+            "name": "Eye",
+            "type": "Eye",
+            "visible": true,
+            "locked": false,
+            "keyframes": [
+                {
+                    "time": 0,
+                    "value": {
+                        "Rotate": 0,
+                        "Scale": {
+                            "x": 1,
+                            "y": 1
+                        },
+                        "Translate": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "Visible": true,
+                        "Alpha": 1,
+                        "Tween": {
+                            "display": "sine in out",
+                            "label": "Sine Ease In Out",
+                            "value": "sineInOut"
+                        },
+                        "Vertex 1": {
+                            "x": -300,
+                            "y": -300
+                        },
+                        "Vertex 2": {
+                            "x": 0,
+                            "y": -300
+                        },
+                        "Vertex 3": {
+                            "x": 300,
+                            "y": -300
+                        },
+                        "Vertex 4": {
+                            "x": -300,
+                            "y": 0
+                        },
+                        "Vertex 5": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "Vertex 6": {
+                            "x": 300,
+                            "y": 0
+                        },
+                        "Vertex 7": {
+                            "x": -300,
+                            "y": 300
+                        },
+                        "Vertex 8": {
+                            "x": 0,
+                            "y": 300
+                        },
+                        "Vertex 9": {
+                            "x": 300,
+                            "y": 300
+                        }
+                    }
+                },
+                {
+                    "time": 8,
+                    "value": {
+                        "Rotate": 0,
+                        "Scale": {
+                            "x": 1,
+                            "y": 1
+                        },
+                        "Translate": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "Visible": true,
+                        "Alpha": 1,
+                        "Tween": {
+                            "display": "sine in out",
+                            "label": "Sine Ease In Out",
+                            "value": "sineInOut"
+                        },
+                        "Vertex 1": {
+                            "x": -300,
+                            "y": -300
+                        },
+                        "Vertex 2": {
+                            "x": 0,
+                            "y": -300
+                        },
+                        "Vertex 3": {
+                            "x": 300,
+                            "y": -300
+                        },
+                        "Vertex 4": {
+                            "x": -300,
+                            "y": 0
+                        },
+                        "Vertex 5": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "Vertex 6": {
+                            "x": 300,
+                            "y": 0
+                        },
+                        "Vertex 7": {
+                            "x": -300,
+                            "y": 300
+                        },
+                        "Vertex 8": {
+                            "x": 0,
+                            "y": 300
+                        },
+                        "Vertex 9": {
+                            "x": 300,
+                            "y": 300
+                        }
+                    }
+                },
+                {
+                    "value": {
+                        "Rotate": 0,
+                        "Scale": {
+                            "x": 1,
+                            "y": 0.1375287832936605
+                        },
+                        "Translate": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "Visible": true,
+                        "Alpha": 1,
+                        "Tween": {
+                            "display": "sine in out",
+                            "label": "Sine Ease In Out",
+                            "value": "sineInOut"
+                        },
+                        "Vertex 1": {
+                            "x": -300,
+                            "y": -300
+                        },
+                        "Vertex 2": {
+                            "x": 0,
+                            "y": -300
+                        },
+                        "Vertex 3": {
+                            "x": 300,
+                            "y": -300
+                        },
+                        "Vertex 4": {
+                            "x": -300,
+                            "y": 0
+                        },
+                        "Vertex 5": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "Vertex 6": {
+                            "x": 300,
+                            "y": 0
+                        },
+                        "Vertex 7": {
+                            "x": -300,
+                            "y": 300
+                        },
+                        "Vertex 8": {
+                            "x": 0,
+                            "y": 300
+                        },
+                        "Vertex 9": {
+                            "x": 300,
+                            "y": 300
+                        }
+                    },
+                    "time": 11
+                },
+                {
+                    "value": {
+                        "Rotate": 0,
+                        "Scale": {
+                            "x": 1,
+                            "y": 1
+                        },
+                        "Translate": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "Visible": true,
+                        "Alpha": 1,
+                        "Tween": {
+                            "display": "sine in out",
+                            "label": "Sine Ease In Out",
+                            "value": "sineInOut"
+                        },
+                        "Vertex 1": {
+                            "x": -300,
+                            "y": -300
+                        },
+                        "Vertex 2": {
+                            "x": 0,
+                            "y": -300
+                        },
+                        "Vertex 3": {
+                            "x": 300,
+                            "y": -300
+                        },
+                        "Vertex 4": {
+                            "x": -300,
+                            "y": 0
+                        },
+                        "Vertex 5": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "Vertex 6": {
+                            "x": 300,
+                            "y": 0
+                        },
+                        "Vertex 7": {
+                            "x": -300,
+                            "y": 300
+                        },
+                        "Vertex 8": {
+                            "x": 0,
+                            "y": 300
+                        },
+                        "Vertex 9": {
+                            "x": 300,
+                            "y": 300
+                        }
+                    },
+                    "time": 14
+                },
+                {
+                    "value": {
+                        "Rotate": 0,
+                        "Scale": {
+                            "x": 1,
+                            "y": 1
+                        },
+                        "Translate": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "Visible": true,
+                        "Alpha": 1,
+                        "Tween": {
+                            "display": "sine in out",
+                            "label": "Sine Ease In Out",
+                            "value": "sineInOut"
+                        },
+                        "Vertex 1": {
+                            "x": -300,
+                            "y": -300
+                        },
+                        "Vertex 2": {
+                            "x": 0,
+                            "y": -300
+                        },
+                        "Vertex 3": {
+                            "x": 300,
+                            "y": -300
+                        },
+                        "Vertex 4": {
+                            "x": -300,
+                            "y": 0
+                        },
+                        "Vertex 5": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "Vertex 6": {
+                            "x": 300,
+                            "y": 0
+                        },
+                        "Vertex 7": {
+                            "x": -300,
+                            "y": 300
+                        },
+                        "Vertex 8": {
+                            "x": 0,
+                            "y": 300
+                        },
+                        "Vertex 9": {
+                            "x": 300,
+                            "y": 300
+                        }
+                    },
+                    "time": 17
+                },
+                {
+                    "value": {
+                        "Rotate": 0,
+                        "Scale": {
+                            "x": 1,
+                            "y": 0.1375287832936605
+                        },
+                        "Translate": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "Visible": true,
+                        "Alpha": 1,
+                        "Tween": {
+                            "display": "sine in out",
+                            "label": "Sine Ease In Out",
+                            "value": "sineInOut"
+                        },
+                        "Vertex 1": {
+                            "x": -300,
+                            "y": -300
+                        },
+                        "Vertex 2": {
+                            "x": 0,
+                            "y": -300
+                        },
+                        "Vertex 3": {
+                            "x": 300,
+                            "y": -300
+                        },
+                        "Vertex 4": {
+                            "x": -300,
+                            "y": 0
+                        },
+                        "Vertex 5": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "Vertex 6": {
+                            "x": 300,
+                            "y": 0
+                        },
+                        "Vertex 7": {
+                            "x": -300,
+                            "y": 300
+                        },
+                        "Vertex 8": {
+                            "x": 0,
+                            "y": 300
+                        },
+                        "Vertex 9": {
+                            "x": 300,
+                            "y": 300
+                        }
+                    },
+                    "time": 20
+                },
+                {
+                    "value": {
+                        "Rotate": 0,
+                        "Scale": {
+                            "x": 1,
+                            "y": 1
+                        },
+                        "Translate": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "Visible": true,
+                        "Alpha": 1,
+                        "Tween": {
+                            "display": "sine in out",
+                            "label": "Sine Ease In Out",
+                            "value": "sineInOut"
+                        },
+                        "Vertex 1": {
+                            "x": -300,
+                            "y": -300
+                        },
+                        "Vertex 2": {
+                            "x": 0,
+                            "y": -300
+                        },
+                        "Vertex 3": {
+                            "x": 300,
+                            "y": -300
+                        },
+                        "Vertex 4": {
+                            "x": -300,
+                            "y": 0
+                        },
+                        "Vertex 5": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "Vertex 6": {
+                            "x": 300,
+                            "y": 0
+                        },
+                        "Vertex 7": {
+                            "x": -300,
+                            "y": 300
+                        },
+                        "Vertex 8": {
+                            "x": 0,
+                            "y": 300
+                        },
+                        "Vertex 9": {
+                            "x": 300,
+                            "y": 300
+                        }
+                    },
+                    "time": 23
+                }
+            ]
         }
     ]
 }

@@ -71,7 +71,7 @@ TopRule = $*  ($*) ?
             ($EXPAND) {cmd='expand_image'}
              $*;
 
-EXPAND = expand | shrink | bigger | close;
+EXPAND = expand | shrink | bigger | close | (zoom in) | (zoom out) | image ;
 REPEAT = repeat | (do here);
 NEXT_STEP = next | continue;
 PREV_STEP = previous;
