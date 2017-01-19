@@ -1,0 +1,564 @@
+{
+    "class": "go.GraphLinksModel",
+    "dataFormat": "flow-1",
+    "nodeKeyProperty": "id",
+    "nodeCategoryProperty": "class",
+    "linkFromPortIdProperty": "fromPort",
+    "linkToPortIdProperty": "toPort",
+    "nodeDataArray": [
+        {
+            "class": "Flow.Begin",
+            "clazz": "Flow.Begin",
+            "asset-pack": "core",
+            "loc": "-272.921875 -184",
+            "id": "45452948-d065-4123-825d-9c71d1518b55",
+            "options": {
+                "inputParameters": [
+                    "()=>{",
+                    "  return {",
+                    "//    parm1: 'parm1_default_value',",
+                    "//    parm2: 'parm2_default_value'",
+                    "  };",
+                    "}"
+                ]
+            },
+            "name": ""
+        },
+        {
+            "class": "Mim.Announcement",
+            "clazz": "Mim.Announcement",
+            "asset-pack": "core",
+            "loc": "-41.921875 -343",
+            "id": "67532b82-3029-4904-9362-0a8f98d001c9",
+            "options": {
+                "mimPath": "mims/en-us/oobe/step1.mim",
+                "getPromptData": [
+                    "() => {",
+                    "\treturn {};",
+                    "}",
+                    "",
+                    ""
+                ]
+            },
+            "name": "step1"
+        },
+        {
+            "class": "Mim.Announcement",
+            "clazz": "Mim.Announcement",
+            "asset-pack": "core",
+            "loc": "-41.921875 -262.9421040901048",
+            "id": "b38c1810-c1bb-478f-a674-e8db2867893c",
+            "options": {
+                "mimPath": "mims/en-us/oobe/step2.mim",
+                "getPromptData": [
+                    "() => {",
+                    "\treturn {};",
+                    "}",
+                    "",
+                    ""
+                ]
+            },
+            "name": "step2"
+        },
+        {
+            "class": "Mim.Announcement",
+            "clazz": "Mim.Announcement",
+            "asset-pack": "core",
+            "loc": "-41.921875 -174.4710520450524",
+            "id": "6a88b359-307d-4845-8c72-4762f857a9fc",
+            "options": {
+                "mimPath": "mims/en-us/oobe/step3.mim",
+                "getPromptData": [
+                    "() => {",
+                    "\treturn {};",
+                    "}",
+                    "",
+                    ""
+                ]
+            },
+            "name": "step3"
+        },
+        {
+            "class": "Mim.Announcement",
+            "clazz": "Mim.Announcement",
+            "asset-pack": "core",
+            "loc": "-41.921875 -85",
+            "id": "5da0222b-c341-4ae2-9f0c-4e77566a1f92",
+            "options": {
+                "mimPath": "mims/en-us/oobe/step4.mim",
+                "getPromptData": [
+                    "() => {",
+                    "\treturn {};",
+                    "}",
+                    "",
+                    ""
+                ]
+            },
+            "name": "step4"
+        },
+        {
+            "class": "Mim.Announcement",
+            "clazz": "Mim.Announcement",
+            "asset-pack": "core",
+            "loc": "-41.921875 0",
+            "id": "0c43c3dd-4ca4-426d-90e5-5e9caba7af96",
+            "options": {
+                "mimPath": "mims/en-us/oobe/step5.mim",
+                "getPromptData": [
+                    "() => {",
+                    "\treturn {};",
+                    "}",
+                    "",
+                    ""
+                ]
+            },
+            "name": "step5"
+        },
+        {
+            "class": "Flow.Begin-Parallel",
+            "clazz": "Flow.Begin-Parallel",
+            "asset-pack": "core",
+            "loc": "-282.921875 163.53332774085317",
+            "id": "be7d8ea0-5460-4624-9b48-38e0bab7d452",
+            "options": {},
+            "name": ""
+        },
+        {
+            "class": "Flow.End",
+            "clazz": "Flow.End",
+            "asset-pack": "core",
+            "loc": "160.078125 -162.5333277408532",
+            "id": "e87bc3ca-ebac-4301-8f23-a985e33216de",
+            "options": {
+                "getTransition": [
+                    "() => { return ; }"
+                ]
+            },
+            "name": ""
+        },
+        {
+            "class": "PlayAnimation",
+            "clazz": "PlayAnimation",
+            "asset-pack": "core",
+            "loc": "-28.59168243408203 141",
+            "id": "2d739ffa-141c-462b-982e-637bfa2faeb8",
+            "options": {
+                "animPath": "previousstep.keys",
+                "cache": true,
+                "upload": true,
+                "config": [
+                    "(animation) => {",
+                    "}"
+                ]
+            },
+            "name": ""
+        },
+        {
+            "class": "PlayAnimation",
+            "clazz": "PlayAnimation",
+            "asset-pack": "core",
+            "loc": "-28.59168243408203 92",
+            "id": "697af9ba-93b5-4c77-b42d-10a8999c3ccb",
+            "options": {
+                "animPath": "nextstep.keys",
+                "cache": true,
+                "upload": true,
+                "config": [
+                    "(animation) => {",
+                    "}"
+                ]
+            },
+            "name": ""
+        },
+        {
+            "class": "PlayAnimation",
+            "clazz": "PlayAnimation",
+            "asset-pack": "core",
+            "loc": "-28.59168243408203 231",
+            "id": "f9862480-0874-4736-a72e-26d4b0796446",
+            "options": {
+                "animPath": "repeat.keys",
+                "cache": true,
+                "upload": true,
+                "config": [
+                    "(animation) => {",
+                    "}"
+                ]
+            },
+            "name": "",
+            "size": "88.6623891242845 33"
+        },
+        {
+            "class": "PlayAnimation",
+            "clazz": "PlayAnimation",
+            "asset-pack": "core",
+            "loc": "-28.59168243408203 274",
+            "id": "4febe61f-ddf0-43f3-99bc-8fd1e608ad2d",
+            "options": {
+                "animPath": "image.keys",
+                "cache": true,
+                "upload": true,
+                "config": [
+                    "(animation) => {",
+                    "}"
+                ]
+            },
+            "name": ""
+        },
+        {
+            "class": "Flow.End",
+            "clazz": "Flow.End",
+            "asset-pack": "core",
+            "loc": "109.078125 184.99999999999997",
+            "id": "8de2b3c0-2f42-4d7b-8923-fd36e4527cb2",
+            "options": {
+                "getTransition": [
+                    "() => { return ; }"
+                ]
+            },
+            "name": ""
+        },
+        {
+            "class": "Flow.Eval",
+            "clazz": "Flow.Eval",
+            "asset-pack": "core",
+            "loc": "-166.20775350416733 -162.5333277408532",
+            "id": "3c3791ed-7222-4bba-9a80-494e605b99ef",
+            "options": {
+                "Script": [
+                    "() => {",
+                    "  if(notepad.params.step == 's2'){",
+                    "    return 'step2';",
+                    "  }else if (notepad.params.step == \"s3\"){",
+                    "    return 'step3';",
+                    "  }else if (notepad.params.step == \"s4\"){",
+                    "    return 'step4';",
+                    "  }else if (notepad.params.step == \"s5\"){",
+                    "    return 'step5';",
+                    "  }else if (notepad.params.step == \"s1\"){",
+                    "    return 'step1';",
+                    "  }else if (notepad.params.step == 'aux'){",
+                    "    return '';",
+                    "  }",
+                    "  return '';",
+                    "}"
+                ]
+            },
+            "name": ""
+        },
+        {
+            "class": "Flow.Eval",
+            "clazz": "Flow.Eval",
+            "asset-pack": "core",
+            "loc": "-156.06712850416733 184.99999999999997",
+            "id": "1a79dd0a-7f3f-4554-ad95-25ad4942da83",
+            "options": {
+                "Script": [
+                    "() => {",
+                    "  if((blackboard.Command == 'go_to_next_step') || (blackboard.Command == 'next_n_steps')){",
+                    "    return 'next';",
+                    "  }else if ((blackboard.Command == 'go_to_previous_step') || (blackboard.Command == 'previous_n_steps')){",
+                    "    return 'prev';",
+                    "  }else if (blackboard.Command == 'repeat'){",
+                    "    return 'rep';",
+                    "  }",
+                    "  else if (blackboard.Command == 'expand_image'){",
+                    "    return 'img';",
+                    "  };",
+                    "}"
+                ]
+            },
+            "name": ""
+        }
+    ],
+    "linkDataArray": [
+        {
+            "from": "697af9ba-93b5-4c77-b42d-10a8999c3ccb",
+            "to": "8de2b3c0-2f42-4d7b-8923-fd36e4527cb2",
+            "fromPort": "",
+            "toPort": "",
+            "text": "",
+            "fromSpot": {
+                "class": "go.Spot",
+                "x": 1,
+                "y": 0.5301457150621238,
+                "offsetX": 0,
+                "offsetY": 0
+            }
+        },
+        {
+            "from": "2d739ffa-141c-462b-982e-637bfa2faeb8",
+            "to": "8de2b3c0-2f42-4d7b-8923-fd36e4527cb2",
+            "fromPort": "",
+            "toPort": "",
+            "text": "",
+            "fromSpot": {
+                "class": "go.Spot",
+                "x": 1,
+                "y": 0.5613307571246015,
+                "offsetX": 0,
+                "offsetY": 0
+            },
+            "toSpot": {
+                "class": "go.Spot",
+                "x": 0.31067700969156575,
+                "y": 0,
+                "offsetX": 0,
+                "offsetY": 0
+            }
+        },
+        {
+            "from": "f9862480-0874-4736-a72e-26d4b0796446",
+            "to": "8de2b3c0-2f42-4d7b-8923-fd36e4527cb2",
+            "fromPort": "",
+            "toPort": "",
+            "text": "",
+            "fromSpot": {
+                "class": "go.Spot",
+                "x": 1,
+                "y": 0.5613307571246015,
+                "offsetX": 0,
+                "offsetY": 0
+            },
+            "toSpot": {
+                "class": "go.Spot",
+                "x": 0.29514315920698747,
+                "y": 1,
+                "offsetX": 0,
+                "offsetY": 0
+            }
+        },
+        {
+            "from": "4febe61f-ddf0-43f3-99bc-8fd1e608ad2d",
+            "to": "8de2b3c0-2f42-4d7b-8923-fd36e4527cb2",
+            "fromPort": "",
+            "toPort": "",
+            "text": "",
+            "fromSpot": {
+                "class": "go.Spot",
+                "x": 1,
+                "y": 0.5301457150621236,
+                "offsetX": 0,
+                "offsetY": 0
+            }
+        },
+        {
+            "from": "6a88b359-307d-4845-8c72-4762f857a9fc",
+            "to": "e87bc3ca-ebac-4301-8f23-a985e33216de",
+            "fromPort": "",
+            "toPort": "",
+            "text": ""
+        },
+        {
+            "from": "b38c1810-c1bb-478f-a674-e8db2867893c",
+            "to": "e87bc3ca-ebac-4301-8f23-a985e33216de",
+            "fromPort": "",
+            "toPort": "",
+            "text": "",
+            "toSpot": {
+                "class": "go.Spot",
+                "x": 0.24854160775325262,
+                "y": 0,
+                "offsetX": 0,
+                "offsetY": 0
+            }
+        },
+        {
+            "from": "67532b82-3029-4904-9362-0a8f98d001c9",
+            "to": "e87bc3ca-ebac-4301-8f23-a985e33216de",
+            "fromPort": "",
+            "toPort": "",
+            "text": "",
+            "fromSpot": {
+                "class": "go.Spot",
+                "x": 1,
+                "y": 0.5541443337574313,
+                "offsetX": 0,
+                "offsetY": 0
+            }
+        },
+        {
+            "from": "5da0222b-c341-4ae2-9f0c-4e77566a1f92",
+            "to": "e87bc3ca-ebac-4301-8f23-a985e33216de",
+            "fromPort": "",
+            "toPort": "",
+            "text": "",
+            "toSpot": {
+                "class": "go.Spot",
+                "x": 0.2640754582378309,
+                "y": 1,
+                "offsetX": 0,
+                "offsetY": 0
+            }
+        },
+        {
+            "from": "0c43c3dd-4ca4-426d-90e5-5e9caba7af96",
+            "to": "e87bc3ca-ebac-4301-8f23-a985e33216de",
+            "fromPort": "",
+            "toPort": "",
+            "text": "",
+            "fromSpot": {
+                "class": "go.Spot",
+                "x": 1,
+                "y": 0.5362687100878367,
+                "offsetX": 0,
+                "offsetY": 0
+            }
+        },
+        {
+            "from": "45452948-d065-4123-825d-9c71d1518b55",
+            "to": "3c3791ed-7222-4bba-9a80-494e605b99ef",
+            "fromPort": "",
+            "toPort": ""
+        },
+        {
+            "from": "3c3791ed-7222-4bba-9a80-494e605b99ef",
+            "to": "6a88b359-307d-4845-8c72-4762f857a9fc",
+            "fromPort": "",
+            "toPort": "",
+            "text": "step3"
+        },
+        {
+            "from": "3c3791ed-7222-4bba-9a80-494e605b99ef",
+            "to": "67532b82-3029-4904-9362-0a8f98d001c9",
+            "fromPort": "",
+            "toPort": "",
+            "text": "step1",
+            "toSpot": {
+                "class": "go.Spot",
+                "x": 0,
+                "y": 0.5362687100878367,
+                "offsetX": 0,
+                "offsetY": 0
+            }
+        },
+        {
+            "from": "3c3791ed-7222-4bba-9a80-494e605b99ef",
+            "to": "b38c1810-c1bb-478f-a674-e8db2867893c",
+            "fromPort": "",
+            "toPort": "",
+            "text": "step2",
+            "toSpot": {
+                "class": "go.Spot",
+                "x": 0,
+                "y": 0.5709850319297306,
+                "offsetX": 0,
+                "offsetY": 0
+            },
+            "fromSpot": {
+                "class": "go.Spot",
+                "x": 0.6997611476574235,
+                "y": 0,
+                "offsetX": 0,
+                "offsetY": 0
+            }
+        },
+        {
+            "from": "3c3791ed-7222-4bba-9a80-494e605b99ef",
+            "to": "5da0222b-c341-4ae2-9f0c-4e77566a1f92",
+            "fromPort": "",
+            "toPort": "",
+            "text": "step4",
+            "fromSpot": {
+                "class": "go.Spot",
+                "x": 0.7148793904189694,
+                "y": 1,
+                "offsetX": 0,
+                "offsetY": 0
+            },
+            "toSpot": {
+                "class": "go.Spot",
+                "x": 0,
+                "y": 0.5541443337574313,
+                "offsetX": 0,
+                "offsetY": 0
+            }
+        },
+        {
+            "from": "3c3791ed-7222-4bba-9a80-494e605b99ef",
+            "to": "0c43c3dd-4ca4-426d-90e5-5e9caba7af96",
+            "fromPort": "",
+            "toPort": "",
+            "text": "step5",
+            "toSpot": {
+                "class": "go.Spot",
+                "x": 0,
+                "y": 0.5183930864182422,
+                "offsetX": 0,
+                "offsetY": 0
+            }
+        },
+        {
+            "from": "be7d8ea0-5460-4624-9b48-38e0bab7d452",
+            "to": "1a79dd0a-7f3f-4554-ad95-25ad4942da83",
+            "fromPort": "",
+            "toPort": ""
+        },
+        {
+            "from": "1a79dd0a-7f3f-4554-ad95-25ad4942da83",
+            "to": "697af9ba-93b5-4c77-b42d-10a8999c3ccb",
+            "fromPort": "",
+            "toPort": "",
+            "text": "next",
+            "toSpot": {
+                "class": "go.Spot",
+                "x": 0,
+                "y": 0.49896067299964597,
+                "offsetX": 0,
+                "offsetY": 0
+            }
+        },
+        {
+            "from": "1a79dd0a-7f3f-4554-ad95-25ad4942da83",
+            "to": "2d739ffa-141c-462b-982e-637bfa2faeb8",
+            "fromPort": "",
+            "toPort": "",
+            "text": "prev",
+            "segmentOffset": "33 36",
+            "fromSpot": {
+                "class": "go.Spot",
+                "x": 0.7732263585768109,
+                "y": 0,
+                "offsetX": 0,
+                "offsetY": 0
+            }
+        },
+        {
+            "from": "1a79dd0a-7f3f-4554-ad95-25ad4942da83",
+            "to": "f9862480-0874-4736-a72e-26d4b0796446",
+            "fromPort": "",
+            "toPort": "",
+            "text": "rep",
+            "toSpot": {
+                "class": "go.Spot",
+                "x": 0,
+                "y": 0.43659058887469004,
+                "offsetX": 0,
+                "offsetY": 0
+            },
+            "fromSpot": {
+                "class": "go.Spot",
+                "x": 0.8639358151460865,
+                "y": 1,
+                "offsetX": 0,
+                "offsetY": 0
+            },
+            "segmentOffset": "12 -21"
+        },
+        {
+            "from": "1a79dd0a-7f3f-4554-ad95-25ad4942da83",
+            "to": "4febe61f-ddf0-43f3-99bc-8fd1e608ad2d",
+            "fromPort": "",
+            "toPort": "",
+            "text": "img",
+            "toSpot": {
+                "class": "go.Spot",
+                "x": 0,
+                "y": 0.5301457150621236,
+                "offsetX": 0,
+                "offsetY": 0
+            },
+            "segmentOffset": "29 -1.9999999999999858"
+        }
+    ]
+}

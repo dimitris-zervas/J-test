@@ -24,45 +24,13 @@
             "clazz": "Flow.Begin"
         },
         {
-            "class": "Flow.End",
-            "loc": "-409.6352131270764 18.322847498307937",
-            "id": "a42f06cc-3846-4a21-807f-c75205334c7a",
-            "options": {
-                "getTransition": [
-                    "() => { return ''; }"
-                ]
-            },
-            "clazz": "Flow.End",
-            "name": ""
-        },
-        {
-            "class": "Subtree",
-            "asset-pack": "core",
-            "loc": "-406.42929576867795 -93.32284749830794",
-            "id": "b9f977cb-76a3-411a-b348-b5a9a001623e",
-            "options": {
-                "getNotepad": [
-                    "() => {",
-                    "    return {};",
-                    "}"
-                ],
-                "onResult": [
-                    "(treeResult) => {",
-                    "}"
-                ],
-                "behaviorPath": "../behaviors/idle"
-            },
-            "name": "idle",
-            "clazz": "Subtree"
-        },
-        {
             "class": "Mim.Question",
             "clazz": "Mim.Question",
             "asset-pack": "core",
             "loc": "-377.6739482703699 -280.7163708531541",
             "id": "35c46a37-f6ee-49e6-bf50-21284f463d49",
             "options": {
-                "mimPath": "mims\\en-us\\oobe\\cloqq_init.mim",
+                "mimPath": "mims/en-us/oobe/cloqq_init.mim",
                 "getPromptData": [
                     "() => {",
                     "\treturn {};",
@@ -81,8 +49,10 @@
                     "\tlet mimState = results.state;",
                     "\tlet asrResults = results.asrResults;",
                     "\tlet transition = results.firstGrammarTag;",
+                    "\t",
                     "\t// Get the 'cmd' from the rule",
                     "\tnotepad.Command = asrResults.NLParse.cmd;",
+                    "\tblackboard.Command = notepad.Command;",
                     "\tconsole.log(\"<<cloqq_init>> cmd:\" + notepad.Command);",
                     "\t// Check if there is a 'num' too",
                     "\tvar len = Object.keys(asrResults.NLParse).length",
@@ -204,7 +174,7 @@
             "class": "Flow.Eval",
             "clazz": "Flow.Eval",
             "asset-pack": "core",
-            "loc": "-16.26475613232931 -288.2163708531541",
+            "loc": "-21.264756132329296 -288.2163708531541",
             "id": "82b49250-6809-4664-b0df-18524a4781a0",
             "options": {
                 "Script": [
@@ -214,52 +184,35 @@
                     "  console.log(\"Check_step: >>> \");",
                     "  console.log(step);",
                     "  var transition = \"\";",
-                    "  var step1 = 'b';",
+                    "  ",
                     "  if (notepad.step_transition == \"True\") {",
                     "    if (step == 1) {",
-                    "      notepad.step1 = 'b';",
                     "      transition = \"s1\";",
+                    "      notepad.transition = \"s1\";",
                     "    }else if (step == 2) {",
                     "      transition = \"s2\";",
+                    "      notepad.transition = \"s2\";",
                     "    }else if (step == 3) {",
                     "      transition = \"s3\";",
+                    "      notepad.transition = \"s3\";",
                     "    }else if (step == 4) {",
                     "      transition = \"s4\";",
+                    "      notepad.transition = \"s4\";",
                     "    }else if (step == 5) {",
                     "      transition = \"s5\";",
+                    "      notepad.transition = \"s5\";",
                     "    }",
-                    "  }else {",
-                    "    transition = \"aux\";",
                     "  }",
+                    "    transition = \"aux\";",
+                    "    notepad.transition = 'expand_image';",
+                    "",
                     "  notepad.step_transition = \"False\";",
                     "  return transition;",
                     "}"
                 ]
             },
             "name": "check_step",
-            "size": "222 64"
-        },
-        {
-            "class": "Mim.Announcement",
-            "clazz": "Mim.Announcement",
-            "asset-pack": "core",
-            "loc": "-56.336601661309416 -136.02084047477348",
-            "options": {
-                "mimPath": "mims\\en-us\\oobe\\step2.mim",
-                "getPromptData": [
-                    "() => {",
-                    "\tif (notepad.num != \"\") {",
-                    "\t\tnotepad.num = \"\";",
-                    "\t}",
-                    "\treturn {};",
-                    "}",
-                    "",
-                    ""
-                ]
-            },
-            "id": "e61ce5a4-1c4d-4a2c-bcfb-63bc1a2f9fc8",
-            "name": "step2",
-            "size": "67 39"
+            "size": "227 64"
         },
         {
             "class": "Flow.Eval",
@@ -276,99 +229,13 @@
                     "    notepad.numFlag = false;",
                     "    notepad.setp1 = 'a';",
                     "    notepad.step_transition = \"False\";",
+                    "    notepad.transition = \"\";",
+                    "    blackboard.Command = \"\";",
                     "    return '';",
                     "}"
                 ]
             },
             "name": "Init"
-        },
-        {
-            "class": "Mim.Announcement",
-            "clazz": "Mim.Announcement",
-            "asset-pack": "core",
-            "loc": "-59.836601661309416 -195.50000000000006",
-            "options": {
-                "mimPath": "mims\\en-us\\oobe\\step1.mim",
-                "getPromptData": [
-                    "() => {",
-                    "\tif (notepad.num != \"\") {",
-                    "\t\tnotepad.num = \"\";",
-                    "\t}",
-                    "\treturn {};",
-                    "}",
-                    "",
-                    ""
-                ]
-            },
-            "id": "3e424d31-d3ef-43e7-9caf-64378c99cbb8",
-            "name": "step1",
-            "size": "74 33"
-        },
-        {
-            "class": "Mim.Announcement",
-            "clazz": "Mim.Announcement",
-            "asset-pack": "core",
-            "loc": "-60.836601661309416 -74.5",
-            "options": {
-                "mimPath": "mims\\en-us\\oobe\\step3.mim",
-                "getPromptData": [
-                    "() => {",
-                    "\tif (notepad.num != \"\") {",
-                    "\t\tnotepad.num = \"\";",
-                    "\t}",
-                    "\treturn {};",
-                    "}",
-                    "",
-                    ""
-                ]
-            },
-            "id": "91b78e73-a68d-4ab3-abf0-106d1894a9a0",
-            "name": "step3",
-            "size": "74 37"
-        },
-        {
-            "class": "Mim.Announcement",
-            "clazz": "Mim.Announcement",
-            "asset-pack": "core",
-            "loc": "-58.836601661309416 -18.677152501692063",
-            "options": {
-                "mimPath": "mims\\en-us\\oobe\\step4.mim",
-                "getPromptData": [
-                    "() => {",
-                    "\tif (notepad.num != \"\") {",
-                    "\t\tnotepad.num = \"\";",
-                    "\t}",
-                    "\treturn {};",
-                    "}",
-                    "",
-                    ""
-                ]
-            },
-            "id": "d8559f15-c2b4-46f9-8064-50aa8b55899e",
-            "name": "step4",
-            "size": "72 37"
-        },
-        {
-            "class": "Mim.Announcement",
-            "clazz": "Mim.Announcement",
-            "asset-pack": "core",
-            "loc": "-59.836601661309416 30.38499999999999",
-            "options": {
-                "mimPath": "mims\\en-us\\oobe\\step5.mim",
-                "getPromptData": [
-                    "() => {",
-                    "\tif (notepad.num != \"\") {",
-                    "\t\tnotepad.num = \"\";",
-                    "\t}",
-                    "\treturn {};",
-                    "}",
-                    "",
-                    ""
-                ]
-            },
-            "id": "7ae16c7c-e5aa-4457-803f-f58a6fce68e4",
-            "name": "step5",
-            "size": "75 38.82284749830794"
         },
         {
             "class": "Flow.Catch",
@@ -384,42 +251,38 @@
                 ]
             },
             "name": "~InteractionError"
+        },
+        {
+            "class": "Flow.Subflow",
+            "clazz": "Flow.Subflow",
+            "asset-pack": "core",
+            "loc": "-127.39641405544194 -169",
+            "id": "201f444b-754c-4087-a85c-5a7509e089c5",
+            "options": {
+                "subflowId": "./animation",
+                "inputParameters": [
+                    "()=>{",
+                    "  return {",
+                    "   step: notepad.transition",
+                    "//    parm2: 'parm2_default_value'",
+                    "  };",
+                    "}"
+                ],
+                "getTransition": [
+                    "(subflow_result_object) => {",
+                    "    return subflow_result_object.transition;",
+                    "}"
+                ]
+            },
+            "name": "animation"
         }
     ],
     "linkDataArray": [
-        {
-            "from": "b9f977cb-76a3-411a-b348-b5a9a001623e",
-            "to": "a42f06cc-3846-4a21-807f-c75205334c7a",
-            "fromPort": "",
-            "toPort": ""
-        },
         {
             "from": "943fb90c-8699-4eb6-9de1-a1cddc841c94",
             "to": "16574095-2299-4f49-88de-c677f7dce395",
             "fromPort": "",
             "toPort": ""
-        },
-        {
-            "from": "82b49250-6809-4664-b0df-18524a4781a0",
-            "to": "e61ce5a4-1c4d-4a2c-bcfb-63bc1a2f9fc8",
-            "fromPort": "",
-            "toPort": "",
-            "text": "s2",
-            "fromSpot": {
-                "class": "go.Spot",
-                "x": 0.47071715881679876,
-                "y": 1,
-                "offsetX": 0,
-                "offsetY": 0
-            },
-            "segmentOffset": "62.84297567096877 45.75989596685292",
-            "toSpot": {
-                "class": "go.Spot",
-                "x": 1,
-                "y": 0.49117539678906336,
-                "offsetX": 0,
-                "offsetY": 0
-            }
         },
         {
             "from": "16574095-2299-4f49-88de-c677f7dce395",
@@ -436,192 +299,6 @@
             }
         },
         {
-            "from": "e61ce5a4-1c4d-4a2c-bcfb-63bc1a2f9fc8",
-            "to": "35c46a37-f6ee-49e6-bf50-21284f463d49",
-            "fromPort": "",
-            "toPort": "",
-            "text": "",
-            "fromSpot": {
-                "class": "go.Spot",
-                "x": 0,
-                "y": 0.5194446275582946,
-                "offsetX": 0,
-                "offsetY": 0
-            },
-            "toSpot": {
-                "class": "go.Spot",
-                "x": 0.7486273243829392,
-                "y": 1,
-                "offsetX": 0,
-                "offsetY": 0
-            }
-        },
-        {
-            "from": "82b49250-6809-4664-b0df-18524a4781a0",
-            "to": "91b78e73-a68d-4ab3-abf0-106d1894a9a0",
-            "fromPort": "",
-            "toPort": "",
-            "text": "s3",
-            "segmentOffset": "109.97500000000001 71.36000000000018",
-            "toSpot": {
-                "class": "go.Spot",
-                "x": 1,
-                "y": 0.37466216216216247,
-                "offsetX": 0,
-                "offsetY": 0
-            },
-            "fromSpot": {
-                "class": "go.Spot",
-                "x": 0.5948725642222041,
-                "y": 1,
-                "offsetX": 0,
-                "offsetY": 0
-            }
-        },
-        {
-            "from": "82b49250-6809-4664-b0df-18524a4781a0",
-            "to": "3e424d31-d3ef-43e7-9caf-64378c99cbb8",
-            "fromPort": "",
-            "toPort": "",
-            "text": "s1",
-            "toSpot": {
-                "class": "go.Spot",
-                "x": 1,
-                "y": 0.47856060606060835,
-                "offsetX": 0,
-                "offsetY": 0
-            },
-            "fromSpot": {
-                "class": "go.Spot",
-                "x": 0.3515279696276097,
-                "y": 1,
-                "offsetX": 0,
-                "offsetY": 0
-            },
-            "segmentOffset": "12.127500000000026 19.845000000000027"
-        },
-        {
-            "from": "3e424d31-d3ef-43e7-9caf-64378c99cbb8",
-            "to": "35c46a37-f6ee-49e6-bf50-21284f463d49",
-            "fromPort": "",
-            "toPort": "",
-            "text": "",
-            "toSpot": {
-                "class": "go.Spot",
-                "x": 0.838509561388896,
-                "y": 1,
-                "offsetX": 0,
-                "offsetY": 0
-            }
-        },
-        {
-            "from": "91b78e73-a68d-4ab3-abf0-106d1894a9a0",
-            "to": "35c46a37-f6ee-49e6-bf50-21284f463d49",
-            "fromPort": "",
-            "toPort": "",
-            "text": "",
-            "fromSpot": {
-                "class": "go.Spot",
-                "x": 0,
-                "y": 0.49385135135135233,
-                "offsetX": 0,
-                "offsetY": 0
-            },
-            "toSpot": {
-                "class": "go.Spot",
-                "x": 0.6270219449042911,
-                "y": 1,
-                "offsetX": 0,
-                "offsetY": 0
-            }
-        },
-        {
-            "from": "82b49250-6809-4664-b0df-18524a4781a0",
-            "to": "d8559f15-c2b4-46f9-8064-50aa8b55899e",
-            "fromPort": "",
-            "toPort": "",
-            "text": "s4",
-            "segmentOffset": "150.36000000000018 96.38500000000006",
-            "toSpot": {
-                "class": "go.Spot",
-                "x": 1,
-                "y": 0.3558014189646522,
-                "offsetX": 0,
-                "offsetY": 0
-            },
-            "fromSpot": {
-                "class": "go.Spot",
-                "x": 0.7140617534113934,
-                "y": 1,
-                "offsetX": 0,
-                "offsetY": 0
-            }
-        },
-        {
-            "from": "d8559f15-c2b4-46f9-8064-50aa8b55899e",
-            "to": "35c46a37-f6ee-49e6-bf50-21284f463d49",
-            "fromPort": "",
-            "toPort": "",
-            "text": "",
-            "fromSpot": {
-                "class": "go.Spot",
-                "x": 0,
-                "y": 0.47499060815384053,
-                "offsetX": 0,
-                "offsetY": 0
-            },
-            "toSpot": {
-                "class": "go.Spot",
-                "x": 0.4842678037771824,
-                "y": 1,
-                "offsetX": 0,
-                "offsetY": 0
-            }
-        },
-        {
-            "from": "82b49250-6809-4664-b0df-18524a4781a0",
-            "to": "7ae16c7c-e5aa-4457-803f-f58a6fce68e4",
-            "fromPort": "",
-            "toPort": "",
-            "text": "s5",
-            "segmentOffset": "196.5650000000001 122.33250000000008",
-            "toSpot": {
-                "class": "go.Spot",
-                "x": 1,
-                "y": 0.4384660347426074,
-                "offsetX": 0,
-                "offsetY": 0
-            },
-            "fromSpot": {
-                "class": "go.Spot",
-                "x": 0.8282847263843662,
-                "y": 1,
-                "offsetX": 0,
-                "offsetY": 0
-            }
-        },
-        {
-            "from": "7ae16c7c-e5aa-4457-803f-f58a6fce68e4",
-            "to": "35c46a37-f6ee-49e6-bf50-21284f463d49",
-            "fromPort": "",
-            "toPort": "",
-            "text": "",
-            "fromSpot": {
-                "class": "go.Spot",
-                "x": 0,
-                "y": 0.35327135652782266,
-                "offsetX": 0,
-                "offsetY": 0
-            },
-            "toSpot": {
-                "class": "go.Spot",
-                "x": 0.33622647223795865,
-                "y": 1,
-                "offsetX": 0,
-                "offsetY": 0
-            }
-        },
-        {
             "from": "3c613b0e-b7ca-40ad-b9d0-8d09548752f1",
             "to": "82b49250-6809-4664-b0df-18524a4781a0",
             "fromPort": "",
@@ -629,7 +306,7 @@
             "text": "",
             "toSpot": {
                 "class": "go.Spot",
-                "x": 0.16777796962760957,
+                "x": 0.18653251600145065,
                 "y": 0,
                 "offsetX": 0,
                 "offsetY": 0
@@ -642,14 +319,6 @@
                 "offsetX": 0,
                 "offsetY": 0
             }
-        },
-        {
-            "from": "82b49250-6809-4664-b0df-18524a4781a0",
-            "to": "35c46a37-f6ee-49e6-bf50-21284f463d49",
-            "fromPort": "",
-            "toPort": "",
-            "text": "aux",
-            "segmentOffset": "29.767500000000027 12.127499999999998"
         },
         {
             "from": "35c46a37-f6ee-49e6-bf50-21284f463d49",
@@ -692,6 +361,20 @@
                 "offsetX": 0,
                 "offsetY": 0
             }
+        },
+        {
+            "from": "82b49250-6809-4664-b0df-18524a4781a0",
+            "to": "201f444b-754c-4087-a85c-5a7509e089c5",
+            "fromPort": "",
+            "toPort": "",
+            "text": ""
+        },
+        {
+            "from": "201f444b-754c-4087-a85c-5a7509e089c5",
+            "to": "35c46a37-f6ee-49e6-bf50-21284f463d49",
+            "fromPort": "",
+            "toPort": "",
+            "text": ""
         }
     ]
 }

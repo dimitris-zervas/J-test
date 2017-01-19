@@ -22,14 +22,14 @@
 			"prompt": "Let me know when you are ready.",
 			"media": "TTS",
 			"prompt_id": "ID_INIT_1",
-			"weight": 1
+			"weight": 2
 		},
 		{
 			"prompt_category": "Errors",
 			"prompt_sub_category": "NI",
 			"index": 1,
 			"condition": "",
-			"prompt": "I am sorry, I couldn't understand you.",
+			"prompt": "Are you still here?",
 			"media": "TTS",
 			"prompt_id": "ID_INIT_ERR",
 			"weight": 1
@@ -39,7 +39,7 @@
 			"prompt_sub_category": "NM",
 			"index": 1,
 			"condition": "",
-			"prompt": "Nop. My ears don't work today. Sorry. Can you repeat?",
+			"prompt": "Didn't got that. Can you repeat?",
 			"media": "TTS",
 			"prompt_id": "IDsdoif",
 			"weight": 1
